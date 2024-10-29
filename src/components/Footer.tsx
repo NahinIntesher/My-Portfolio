@@ -30,7 +30,7 @@ const Footer = () => {
               <span className="ml-1">LinkedIn</span>
             </a>
             <a
-              href="https://github.com/Assassin318554"
+              href="https://github.com/nahinintesher"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-white hover:text-indigo-400 transition-colors duration-300"

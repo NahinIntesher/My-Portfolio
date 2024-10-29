@@ -17,6 +17,12 @@ interface Achievement {
 
 const achievements: Achievement[] = [
   {
+    title: "Champion at Database Management System",
+    description:
+      "Secured the first position in the UIU CSE Project Show at Database Management System category.",
+    icon: faMedal,
+  },
+  {
     title: "1st runner up at UIU juniors programming",
     description:
       "Secured the first runner-up position in the UIU juniors programming competition.",
@@ -32,14 +38,15 @@ const achievements: Achievement[] = [
     title: "50% scholarship in 4 trimesters",
     description:
       "Received a 50% scholarship for outstanding academic performance in four trimesters.",
-    icon: faTrophy,
+    icon: faStar,
   },
   {
     title: "260+ problems solved on Codeforces",
     description: (
       <div>
         <p className="mb-2">
-          Demonstrated strong problem-solving skills by solving over 260 problems on Codeforces.
+          Demonstrated strong problem-solving skills by solving over 260
+          problems on Codeforces.
         </p>
         <a
           href="https://codeforces.com/profile/Nahin_Intesher"
@@ -59,7 +66,8 @@ const achievements: Achievement[] = [
     description: (
       <div>
         <p className="mb-2">
-          Improved algorithmic thinking by solving more than 40 problems on LeetCode.
+          Improved algorithmic thinking by solving more than 40 problems on
+          LeetCode.
         </p>
         <a
           href="https://leetcode.com/u/NahinIntesher"

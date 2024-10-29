@@ -12,7 +12,7 @@ const personalProjects = [
     title: "Nahin Portfolio",
     description: "My portfolio website to know more about myself.",
     technologies: ["Next JS"],
-    githubLink: "https://github.com/Assassin318554/My-Portfolio",
+    githubLink: "https://github.com/nahinintesher/My-Portfolio",
     date: "07/2024 - Present",
   },
   {
@@ -20,7 +20,7 @@ const personalProjects = [
     description: "Simple Todo App to maintain daily workflow.",
     technologies: ["Flutter"],
     githubLink:
-      "https://github.com/Assassin318554/Flutter-Projects/tree/main/todo_app",
+      "https://github.com/nahinintesher/Flutter-Projects/tree/main/todo_app",
     date: "05/2024 - 06/2024",
   },
   {
@@ -28,7 +28,7 @@ const personalProjects = [
     description: "Simple Weather App to know the weather of any city.",
     technologies: ["Flutter"],
     githubLink:
-      "https://github.com/Assassin318554/Flutter-Projects/tree/main/abohawa",
+      "https://github.com/nahinintesher/Flutter-Projects/tree/main/abohawa",
     date: "05/2024 - 06/2024",
   },
   {
@@ -36,7 +36,7 @@ const personalProjects = [
     description: "Simple Calculator App for doing daily life calculations.",
     technologies: ["Java", "JavaFX"],
     githubLink:
-      "https://github.com/Assassin318554/Java_Projects/tree/main/normalcalculator",
+      "https://github.com/nahinintesher/Java_Projects/tree/main/normalcalculator",
     date: "01/2023 - 02/2023",
   },
   {
@@ -44,7 +44,7 @@ const personalProjects = [
     description: "A Unit Converter app to convert length, time, temperature.",
     technologies: ["HTML", "CSS", "JavaScript"],
     githubLink:
-      "https://github.com/Assassin318554/Dev/tree/main/Java%20Script/Converter",
+      "https://github.com/nahinintesher/Dev/tree/main/Java%20Script/Converter",
     date: "01/2023 - 02/2023",
   },
 ];
@@ -55,7 +55,7 @@ const academicProjects = [
     description:
       "DiscoverYou is a platform where users can discover and develop their talents.",
     technologies: ["React JS", "Node JS", "MySQL"],
-    githubLink: "https://github.com/Assassin318554/DiscoverYou",
+    githubLink: "https://github.com/nahinintesher/DiscoverYou",
     date: "08/2024 - Present",
   },
   {
@@ -63,7 +63,7 @@ const academicProjects = [
     description:
       "A Tic Tac Toe game where two people can play with each other.",
     technologies: ["Java", "JavaFX"],
-    githubLink: "https://github.com/Assassin318554/Tic-Tac-Toe-Game",
+    githubLink: "https://github.com/nahinintesher/Tic-Tac-Toe-Game",
     date: "03/2023 - 04/2023",
   },
 ];

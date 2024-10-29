@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <SocialButton
-            href="https://github.com/Assassin318554"
+            href="https://github.com/nahinintesher"
             icon={faGithub}
             label="GitHub"
             bgColor="bg-gray-700 hover:bg-gray-600"

@@ -103,7 +103,7 @@ export default function About() {
           <br />
           October 2022 - Present
           <br />
-          CGPA: ***** / 4.00 (Till 5th Trimester)
+          CGPA: ***** / 4.00 (Till 6th Trimester)
         </p>
       </div>
 
