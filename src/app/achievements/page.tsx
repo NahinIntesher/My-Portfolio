@@ -29,15 +29,15 @@ const achievements: Achievement[] = [
     icon: faMedal,
   },
   {
-    title: "100% scholarship in 2 trimesters",
+    title: "100% scholarship in 3 trimesters",
     description:
-      "Awarded a 100% scholarship for academic excellence in two trimesters.",
+      "Received a 100% scholarship for academic excellence in three trimesters.",
     icon: faStar,
   },
   {
-    title: "50% scholarship in 4 trimesters",
+    title: "50% scholarship in 3 trimesters",
     description:
-      "Received a 50% scholarship for outstanding academic performance in four trimesters.",
+      "Received a 50% scholarship for academic performance in three trimesters.",
     icon: faStar,
   },
   {

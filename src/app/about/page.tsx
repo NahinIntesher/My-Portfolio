@@ -38,7 +38,7 @@ const skills = [
   },
   {
     category: "Microcontrollers",
-    items: "Arduino",
+    items: "Arduino, ESP32",
     icon: faMicrochip,
   },
   {
@@ -103,7 +103,7 @@ export default function About() {
           <br />
           October 2022 - Present
           <br />
-          CGPA: ***** / 4.00 (Till 6th Trimester)
+          CGPA: 3.90 / 4.00 (Till 6th Trimester)
         </p>
       </div>
 
