@@ -14,7 +14,7 @@ const SocialButton = ({ href, icon, label, bgColor }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`flex items-center justify-center ${bgColor} text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1`}
+    className={`flex items-center justify-center ${bgColor} text-white px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5`}
   >
     <FontAwesomeIcon icon={icon} className="w-5 h-5 mr-2 text-white" />
     <span className="whitespace-nowrap text-white">{label}</span>
@@ -23,17 +23,15 @@ const SocialButton = ({ href, icon, label, bgColor }) => (
 
 const Contact = () => {
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 to-blue-950 text-white px-4 py-12">
-      <div className="max-w-3xl w-full bg-gray-800 rounded-xl shadow-2xl p-8 backdrop-blur-md">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-blue-200">
+    <main className="flex items-center justify-center min-h-screen bg-[#E7F5DC] text-[#323826] px-4 py-12">
+      <div className="max-w-3xl w-full bg-[#98ac73] rounded-xl shadow-2xl p-8 backdrop-blur-md">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-[#E7F5DC]">
           Let's Connect
         </h1>
         <div className="mb-8 text-center">
-          <p className="text-lg mb-4">
-            I'm always open to new opportunities and collaborations.
-          </p>
-          <p className="text-gray-300">
-            Feel free to reach out through any of the platforms below:
+          <p className="text-[#e4f0cc]">
+            I'm always open to new opportunities and collaborations. Feel free
+            to reach out through any of the platforms below:
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -60,18 +58,6 @@ const Contact = () => {
             icon={faEnvelope}
             label="Email"
             bgColor="bg-green-700 hover:bg-green-600"
-          />
-          <SocialButton
-            href="https://www.youtube.com/@nahinintesher1458"
-            icon={faYoutube}
-            label="YouTube"
-            bgColor="bg-red-600 hover:bg-red-500"
-          />
-          <SocialButton
-            href="https://www.instagram.com/yourusername" // Update with your Instagram link
-            icon={faInstagram}
-            label="Instagram"
-            bgColor="bg-pink-600 hover:bg-pink-500"
           />
         </div>
       </div>

@@ -57,7 +57,7 @@ const TypewriterHeading = () => {
 
   return (
     <motion.h2
-      className="text-md text-white mb-6 "
+      className="text-md text-[#112B13] mb-6 "
       variants={fadeInUp}
       initial="initial"
       animate="animate"
@@ -68,6 +68,7 @@ const TypewriterHeading = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+        className="text-[#728156]"
       >
         |
       </motion.span>

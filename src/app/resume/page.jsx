@@ -23,11 +23,11 @@ const ResumePage = () => {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen p-10 bg-gradient-to-b from-gray-950 to-indigo-950">
-      <h1 className="text-5xl text-center text-blue-200 font-bold mb-10">
+    <main className="flex flex-col items-center justify-center min-h-screen p-10 bg-[#E7F5DC] to-[#98A77C]">
+      <h1 className="text-5xl text-center text-[#98A77C] font-bold mb-10">
         My Resume
       </h1>
-      <div className="bg-gray-900 rounded-lg shadow-md p-5 max-w-4xl">
+      <div className="bg-[#98A77C] rounded-lg shadow-md p-5 max-w-4xl">
         {/* Scrollable Container */}
         <div className="mb-4">
           <div className="text-center flex flex-col items-center">
@@ -36,7 +36,6 @@ const ResumePage = () => {
                 <Image
                   src={resume}
                   width={800}
-                  // height={500}
                   alt="Resume Preview"
                   className="border border-gray-800 rounded-lg"
                 />

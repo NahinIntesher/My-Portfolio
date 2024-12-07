@@ -1,7 +1,6 @@
-
 import "@/style/globals.css";
-import { Poppins, Quicksand } from "next/font/google";
-import { motion, AnimatePresence } from "framer-motion";
+import { Quicksand } from "next/font/google";
+import { AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -20,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${quicksand.className} bg-gradient-to-b from-gray-950 to-indigo-950 text-white flex flex-col min-h-screen`}
+        className={`${quicksand.className} bg-[#E7F5DC] text-[#112B13] flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow min-w-screen">

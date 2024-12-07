@@ -25,18 +25,24 @@ const technologyIcons = {
   JavaScript: faJsSquare, // JavaScript icon
 };
 
-const ProjectCard = ({ title, description, technologies, githubLink, date }) => {
+const ProjectCard = ({
+  title,
+  description,
+  technologies,
+  githubLink,
+  date,
+}) => {
   return (
-    <div className="bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
-      <h3 className="text-xl text-amber-300 font-semibold mb-2">{title}</h3>
-      <p className="text-gray-200 text-sm mb-4">{description}</p>
+    <div className="bg-[#CFE1B9] shadow-lg rounded-lg p-6 mb-6 text-[#112B13]">
+      <h3 className="text-xl text-[#728156] font-semibold mb-2">{title}</h3>
+      <p className="text-sm mb-4">{description}</p>
       <div className="mb-4">
         <h4 className="font-semibold mb-2">Technologies:</h4>
         <div className="flex flex-wrap gap-3">
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"
+              className="flex items-center bg-[#B6C99B] text-[#112B13] px-2 py-1 rounded text-sm"
             >
               <FontAwesomeIcon
                 icon={technologyIcons[tech] || faCode}
@@ -48,12 +54,12 @@ const ProjectCard = ({ title, description, technologies, githubLink, date }) => 
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <span className="text-sm text-gray-300">{date}</span>
+        <span className="text-sm text-[#88976C]">{date}</span>
         <Link
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray-900 text-white px-3 py-1 rounded hover:bg-gray-950 hover:text-white transition-colors "
+          className="bg-[#728156] text-white px-3 py-1 rounded hover:bg-[#88976C] transition-colors"
         >
           View on GitHub
         </Link>

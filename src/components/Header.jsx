@@ -36,23 +36,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-950 bg-transparent backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b border-gray-800">
+    <nav className="bg-gray-950 bg-transparent backdrop-blur-3xl  sticky top-0 z-50 w-full border-b border-gray-400">
       <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
         <div className="relative group">
           <Link
             href="/"
-            className="group relative text-2xl md:text-3xl font-extrabold text-amber-400 px-2 py-3 md:px-4 md:py-2 transition duration-300 ease-in-out"
+            className="group relative text-2xl md:text-3xl font-extrabold text-[#728156] px-2 py-3 md:px-4 md:py-2 transition duration-300 ease-in-out"
             onMouseEnter={() => setShowLogoPopup(true)}
             onMouseLeave={() => setShowLogoPopup(false)}
           >
-            <span className="text-amber-400 group-hover:text-amber-500 transition-all duration-300">
+            <span className="text-[#728156] group-hover:text-[#88976C] transition-all duration-300">
               Nahin
             </span>
-            <span className="block absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 group-hover:w-full transition-all duration-300"></span>
+            <span className="block absolute left-0 bottom-0 h-0.5 bg-[#B6C99B] w-0 group-hover:w-full transition-all duration-300"></span>
           </Link>
           {showLogoPopup && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-2 top-full mt-2 bg-amber-400 shadow-lg p-4 rounded-lg min-w-max z-50">
-              <p className="text-sm font-medium text-black ">
+            <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-2 top-full mt-2 bg-[#B6C99B] shadow-lg p-4 rounded-lg min-w-max z-50">
+              <p className="text-sm font-medium text-[#112B13]">
                 Hello, I'm Nahin! Welcome to my portfolio page.
               </p>
             </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
         <button
           onClick={toggleMenu}
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-[#112B13] focus:outline-none"
           aria-label="Toggle menu"
         >
           <svg
@@ -87,23 +87,14 @@ const Navbar = () => {
             <li key={item} className="relative group">
               <Link
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-white hover:text-indigo-300 transition-colors ${
-                  activeItem === item ? "text-indigo-300" : ""
+                className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-[#112B13] hover:text-[#98A77C] transition-colors ${
+                  activeItem === item ? "text-[#98A77C]" : ""
                 }`}
                 onClick={() => handleItemClick(item)}
               >
                 {item}
-                <span className="block absolute left-0 bottom-0 h-0.5 bg-indigo-500 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="block absolute left-0 bottom-0 h-0.5 bg-[#98A77C] w-0 group-hover:w-full transition-all duration-300"></span>
               </Link>
-              {item !== "Home" && (
-                <div className="hidden group-hover:block absolute left-1/2 transform -translate-x-1/2 translate-y-2 top-full mt-1 bg-indigo-300 shadow-lg p-3 rounded-lg min-w-max z-50">
-                  <p className="text-sm font-medium text-black">
-                    {item === "About"
-                      ? "Know about myself here"
-                      : `Know about my ${item} here.`}
-                  </p>
-                </div>
-              )}
             </li>
           ))}
         </ul>

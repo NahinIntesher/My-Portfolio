@@ -46,7 +46,7 @@ const achievements = [
           href="https://codeforces.com/profile/Nahin_Intesher"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-indigo-400 underline hover:text-indigo-600 transition-colors duration-200"
+          className="inline-flex items-center text-[#728156] underline hover:text-[#B6C99B] transition-colors duration-200"
         >
           <FontAwesomeIcon icon={faCode} className="w-5 h-5 mr-2" />
           View my Codeforces profile
@@ -67,7 +67,7 @@ const achievements = [
           href="https://leetcode.com/u/NahinIntesher"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-indigo-400 underline hover:text-indigo-600 transition-colors duration-200"
+          className="inline-flex items-center text-[#728156] underline hover:text-[#B6C99B] transition-colors duration-200"
         >
           <FontAwesomeIcon icon={faPuzzlePiece} className="w-5 h-5 mr-2" />
           Visit my LeetCode profile
@@ -90,27 +90,27 @@ const Achievements = () => {
   }
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 to-indigo-950 text-white px-4 py-12">
+    <main className="flex items-center justify-center min-h-screen bg-[#E7F5DC] text-white px-4 py-12">
       <div className="max-w-6xl w-full p-5">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-14 text-center text-blue-200">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-14 text-center text-[#728156]">
           Achievements
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
+              className="bg-[#CFE1B9] p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
             >
               <div className="flex items-start mb-3">
                 <FontAwesomeIcon
                   icon={achievement.icon}
-                  className="w-5 h-5 mr-3 text-yellow-400"
+                  className="w-5 h-5 mr-3 text-[#728156]"
                 />
-                <h2 className="text-xl font-semibold text-amber-300">
+                <h2 className="text-xl font-semibold text-[#728156]">
                   {achievement.title}
                 </h2>
               </div>
-              <p className="font-medium text-gray-200">
+              <p className="font-medium text-[#292e1f]">
                 {achievement.description}
               </p>
             </div>
