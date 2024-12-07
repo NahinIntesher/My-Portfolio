@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import resume from "@/public/images/resume.jpg";
+import resume from "@/public/images/resume.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
@@ -35,9 +35,9 @@ const ResumePage = () => {
               <>
                 <Image
                   src={resume}
-                  width={800}
+                  width={900}
                   alt="Resume Preview"
-                  className="border border-gray-800 rounded-lg"
+                  className="rounded-md"
                 />
               </>
             )}

@@ -87,8 +87,8 @@ const Navbar = () => {
             <li key={item} className="relative group">
               <Link
                 href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-[#112B13] hover:text-[#98A77C] transition-colors ${
-                  activeItem === item ? "text-[#98A77C]" : ""
+                className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-[#112B13] hover:text-[#728156] transition-colors ${
+                  activeItem === item ? "text-[#728156]" : ""
                 }`}
                 onClick={() => handleItemClick(item)}
               >
