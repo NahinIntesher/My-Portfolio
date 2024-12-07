@@ -1,14 +1,9 @@
-// components/PdfComp.tsx
 import React from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-interface PdfCompProps {
-  file: string;
-}
-
-const PdfComp: React.FC<PdfCompProps> = ({ file }) => {
+const PdfComp = ({ file }) => {
   return (
     <div className="pdf-viewer max-w-full overflow-auto bg-gray-50 p-4 rounded-md shadow-sm">
       <Document file={file}>

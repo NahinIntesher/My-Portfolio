@@ -12,10 +12,10 @@ export default function Home() {
         <div className="mb-8 relative">
           <div className="w-48 h-48 rounded-full overflow-hidden mx-auto border-4 border-indigo-400 shadow-lg mt-5">
             <Image
-              src={profile} // Replace with your actual image path
+              src={profile}
               alt="Nahin Intesher"
-              width={400} // Adjusted for responsive design
-              height={400} // Adjusted for responsive design
+              width={400}
+              height={400}
               className="object-cover"
             />
           </div>
@@ -58,13 +58,10 @@ export default function Home() {
             `}</style>
           </div>
         </div>
-
         <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-amber-400">
           I'm Nahin Intesher
         </h1>
-
         <TypewriterHeading />
-
         <div className="flex flex-col gap-2 sm:flex-row justify-center space-x-0 sm:space-x-4 mt-4">
           <Link
             href="/projects"
@@ -80,7 +77,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
       <div className="mt-16 mb-5 text-center">
         <p className="text-lg text-gray-300 mb-4">Want to Specialize in</p>
         <div className="flex flex-wrap justify-center gap-4">

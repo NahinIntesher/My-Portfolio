@@ -9,37 +9,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-// Define the props type for the SocialButton component
-interface SocialButtonProps {
-  href: string;
-  icon: any; // You can replace 'any' with the specific type if you want more strict typing
-  label: string;
-  bgColor: string;
-}
-
-const SocialButton: React.FC<SocialButtonProps> = ({
-  href,
-  icon,
-  label,
-  bgColor,
-}) => (
+const SocialButton = ({ href, icon, label, bgColor }) => (
   <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
     className={`flex items-center justify-center ${bgColor} text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1`}
   >
-    <FontAwesomeIcon icon={icon} className="w-5 h-5 mr-2 text-white" />{" "}
-    {/* Keep icon color white */}
-    <span className="whitespace-nowrap text-white">{label}</span>{" "}
-    {/* Keep text color white */}
+    <FontAwesomeIcon icon={icon} className="w-5 h-5 mr-2 text-white" />
+    <span className="whitespace-nowrap text-white">{label}</span>
   </a>
 );
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
     <main className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 to-blue-950 text-white px-4 py-12">
-      <div className="max-w-3xl w-full bg-gray-800  rounded-xl shadow-2xl p-8 backdrop-blur-md">
+      <div className="max-w-3xl w-full bg-gray-800 rounded-xl shadow-2xl p-8 backdrop-blur-md">
         <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-blue-200">
           Let's Connect
         </h1>

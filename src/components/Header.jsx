@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const navItems: string[] = [
+const navItems = [
   "Home",
   "About",
   "Projects",
@@ -11,10 +11,10 @@ const navItems: string[] = [
   "Resume",
 ];
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [activeItem, setActiveItem] = useState<string | null>(null);
-  const [showLogoPopup, setShowLogoPopup] = useState<boolean>(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(null);
+  const [showLogoPopup, setShowLogoPopup] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,13 +30,13 @@ const Navbar: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleItemClick = (item: string) => {
+  const handleItemClick = (item) => {
     setActiveItem(item);
     setIsOpen(false);
   };
 
   return (
-    <nav className="bg-gray-950  bg-transparent backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b border-gray-800">
+    <nav className="bg-gray-950 bg-transparent backdrop-blur-3xl shadow-2xl sticky top-0 z-50 w-full border-b border-gray-800">
       <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
         <div className="relative group">
           <Link
@@ -50,16 +50,14 @@ const Navbar: React.FC = () => {
             </span>
             <span className="block absolute left-0 bottom-0 h-0.5 bg-amber-500 w-0 group-hover:w-full transition-all duration-300"></span>
           </Link>
-
           {showLogoPopup && (
-            <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-2 top-full mt-2  bg-amber-400 shadow-lg p-4 rounded-lg min-w-max z-50">
+            <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-2 top-full mt-2 bg-amber-400 shadow-lg p-4 rounded-lg min-w-max z-50">
               <p className="text-sm font-medium text-black ">
                 Hello, I'm Nahin! Welcome to my portfolio page.
               </p>
             </div>
           )}
         </div>
-
         <button
           onClick={toggleMenu}
           className="md:hidden text-white focus:outline-none"
@@ -80,7 +78,6 @@ const Navbar: React.FC = () => {
             />
           </svg>
         </button>
-
         <ul
           className={`${
             isOpen ? "flex" : "hidden"

@@ -21,6 +21,16 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Navbar.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/Navbar.jsx",
+    "src/app/layout.jsx",
+    "src/app/page.jsx",
+    "src/app/resume/page.jsx",
+    "src/app/projects/page.jsx"
+, "src/app/contact/page.jsx", "src/app/achievements/page.jsx", "src/app/about/page.jsx", "src/components/Footer.jsx", "src/components/Header.jsx", "src/components/PdfComp.jsx", "src/components/ProjectCard.jsx", "src/components/TypewriterHeading.jsx"  ],
   "exclude": ["node_modules"]
 }

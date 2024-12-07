@@ -1,3 +1,4 @@
+
 import "@/style/globals.css";
 import { Poppins, Quicksand } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,11 +16,7 @@ export const metadata = {
   description: "Problem Solver & Dedicated Developer",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body

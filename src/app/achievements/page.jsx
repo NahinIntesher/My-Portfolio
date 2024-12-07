@@ -9,13 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-interface Achievement {
-  title: string;
-  description: React.ReactNode;
-  icon: any; // Use `any` for FontAwesome icons, or you can use `IconDefinition`
-}
-
-const achievements: Achievement[] = [
+const achievements = [
   {
     title: "Champion at Database Management System",
     description:
@@ -84,7 +78,7 @@ const achievements: Achievement[] = [
   },
 ];
 
-const Achievements: React.FC = () => {
+const Achievements = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

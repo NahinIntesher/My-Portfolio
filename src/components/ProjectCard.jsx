@@ -12,15 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons"; // Fallback icon
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubLink: string;
-  date: string;
-}
-
-const technologyIcons: Record<string, any> = {
+const technologyIcons = {
   "React JS": faReact,
   "Node JS": faNodeJs,
   Java: faJava,
@@ -33,13 +25,7 @@ const technologyIcons: Record<string, any> = {
   JavaScript: faJsSquare, // JavaScript icon
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  description,
-  technologies,
-  githubLink,
-  date,
-}) => {
+const ProjectCard = ({ title, description, technologies, githubLink, date }) => {
   return (
     <div className="bg-gray-800 shadow-lg rounded-lg p-6 mb-6">
       <h3 className="text-xl text-amber-300 font-semibold mb-2">{title}</h3>

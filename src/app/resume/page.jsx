@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import resume from "@/public/images/resume.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons"; // Download icon
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 const ResumePage = () => {
   const [isClient, setIsClient] = useState(false);
@@ -13,7 +13,7 @@ const ResumePage = () => {
   }, []);
 
   // Function to trigger image download
-  const handleDownload = (imageSrc: string, filename: string) => {
+  const handleDownload = (imageSrc, filename) => {
     const link = document.createElement("a");
     link.href = imageSrc;
     link.download = filename;
@@ -44,7 +44,6 @@ const ResumePage = () => {
             )}
           </div>
         </div>
-
         {/* Download Buttons */}
         <div className="flex flex-col items-center space-y-4">
           <button

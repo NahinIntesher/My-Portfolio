@@ -12,12 +12,10 @@ const Footer = () => {
           <div className="text-sm">
             <p>&copy; {currentYear} Nahin Intesher. All rights reserved.</p>
           </div>
-
           <div className="text-sm flex gap-1">
             <p className=""> Build by </p>
             <p className="text-indigo-300"> Nahin Intesher</p>
           </div>
-
           {/* Social Links */}
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
             <a

@@ -68,14 +68,13 @@ const academicProjects = [
   },
 ];
 
-export default function Projects() {
+function Projects() {
   return (
     <main className="flex items-center justify-center min-h-screen bg-gradient-to-b from-gray-950 to-indigo-950 text-white px-4 py-12">
       <div className="max-w-6xl w-full p-5">
         <h1 className="text-4xl sm:text-5xl font-bold mb-14 text-center text-blue-200">
           My Projects
         </h1>
-
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-6 text-indigo-300 border-b-2 border-gray-300 pb-2">
             Personal Projects
@@ -86,7 +85,6 @@ export default function Projects() {
             ))}
           </div>
         </section>
-
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-6 text-indigo-300 border-b-2 border-gray-300 pb-2">
             Academic Projects
@@ -97,9 +95,10 @@ export default function Projects() {
             ))}
           </div>
         </section>
-
         {/* Add Research Projects section here if you have any */}
       </div>
     </main>
   );
 }
+
+export default Projects;

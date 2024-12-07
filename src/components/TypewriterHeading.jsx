@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const TypewriterHeading = () => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(50); // Speed of typing and deleting
+
   const fullText = "Problem Solver & Dedicated Developer";
 
   useEffect(() => {
-    let typingTimeout: NodeJS.Timeout;
-
+    let typingTimeout;
     const handleTyping = () => {
       if (!isDeleting) {
         // Typing
@@ -33,12 +33,11 @@ const TypewriterHeading = () => {
     };
 
     typingTimeout = setTimeout(handleTyping, typingSpeed);
-
     return () => clearTimeout(typingTimeout);
   }, [text, isDeleting, typingSpeed]);
 
-  // Define the correct type using Variants from Framer Motion
-  const fadeInUp: Variants = {
+  // Define variants without TypeScript type
+  const fadeInUp = {
     initial: {
       opacity: 0,
       y: 20,
