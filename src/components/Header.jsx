@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import profile from "@/public/images/CodeScriba.png";
+import profile from "@/style/images/CodeScriba.png";
 const navItems = [
   "Home",
   "About",
@@ -95,7 +95,9 @@ const Navbar = () => {
               <Link
                 href={item === "Home" ? "/" : `/${item.toLowerCase().trim()}`}
                 className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-[#112B13] hover:text-[#728156] transition-colors ${
-                  activeItem === item ? "text-amber-900 border-b-2 border-[#98A77C]" : ""
+                  activeItem === item
+                    ? "text-amber-900 border-b-2 border-[#98A77C]"
+                    : ""
                 }`}
                 onClick={() => handleItemClick(item)}
               >
