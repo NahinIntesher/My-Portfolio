@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/CodeScriba.png" type="image/png" />
+        <link rel="icon" href="/images/profilePic.png" type="image/png" />
       </head>
       <body
         className={`${quicksand.className} bg-[#E7F5DC] text-[#112B13] flex flex-col min-h-screen`}

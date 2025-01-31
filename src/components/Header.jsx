@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
+import profile from "@/public/images/CodeScriba.png";
 const navItems = [
   "Home",
   "About",
@@ -39,13 +40,18 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-950 bg-transparent backdrop-blur-3xl  sticky top-0 z-50 w-full border-b border-gray-400">
       <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
-        <div className="relative group">
+        <div className="relative group flex">
           <Link
             href="/"
-            className="group relative text-2xl md:text-3xl font-extrabold text-[#728156] px-2 py-3 md:px-4 md:py-2 transition duration-300 ease-in-out"
+            className="group flex gap-2 relative text-2xl md:text-3xl font-extrabold text-[#728156] px-2 py-3 md:px-4 md:py-2 transition duration-300 ease-in-out"
             onMouseEnter={() => setShowLogoPopup(true)}
             onMouseLeave={() => setShowLogoPopup(false)}
           >
+            <Image
+              src={profile}
+              alt="Nahin Intesher"
+              className="rounded-xl h-8 w-8"
+            />
             <span className="text-[#728156] group-hover:text-[#88976C] transition-all duration-300">
               Nahin
             </span>
@@ -89,7 +95,7 @@ const Navbar = () => {
               <Link
                 href={item === "Home" ? "/" : `/${item.toLowerCase().trim()}`}
                 className={`block px-3 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-4 xl:py-2 text-[#112B13] hover:text-[#728156] transition-colors ${
-                  activeItem === item ? "text-[#728156]" : ""
+                  activeItem === item ? "text-amber-900 border-b-2 border-[#98A77C]" : ""
                 }`}
                 onClick={() => handleItemClick(item)}
               >

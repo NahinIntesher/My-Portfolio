@@ -11,7 +11,7 @@ import {
   faJsSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons"; // Fallback icon
-
+import CustomButtonTargetBlanK from "./CustomButtonTargetBlank";
 const technologyIcons = {
   "React JS": faReact,
   "Node JS": faNodeJs,
@@ -33,7 +33,7 @@ const ProjectCard = ({
   date,
 }) => {
   return (
-    <div className="bg-[#CFE1B9] shadow-lg rounded-lg p-6 mb-6 text-[#112B13]">
+    <div className="bg-white border border-[#728156] shadow-lg rounded-lg p-6 mb-6 text-[#112B13]">
       <h3 className="text-xl text-[#728156] font-semibold mb-2">{title}</h3>
       <p className="text-sm mb-4">{description}</p>
       <div className="mb-4">
@@ -42,7 +42,7 @@ const ProjectCard = ({
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="flex items-center bg-[#B6C99B] text-[#112B13] px-2 py-1 rounded text-sm"
+              className="flex items-center bg-[#B6C99B]   px-2 py-1 rounded text-sm"
             >
               <FontAwesomeIcon
                 icon={technologyIcons[tech] || faCode}
@@ -55,14 +55,7 @@ const ProjectCard = ({
       </div>
       <div className="flex justify-between items-center">
         <span className="text-sm text-[#88976C]">{date}</span>
-        <Link
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#728156] text-white px-3 py-1 rounded hover:bg-[#88976C] transition-colors"
-        >
-          View on GitHub
-        </Link>
+        <CustomButtonTargetBlanK text="View on GitHub" link={githubLink} />
       </div>
     </div>
   );

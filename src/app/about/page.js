@@ -10,7 +10,7 @@ import {
 const skills = [
   {
     category: "Programming Languages",
-    items: "Java, C, C++, Python, Dart, JavaScript",
+    items: "Java, C, C++, Python, Dart, JavaScript, Go",
     icon: faCode,
   },
   {
@@ -19,7 +19,7 @@ const skills = [
       "JavaFX, React JS, Node.js, Next JS, Flutter, React Native, Tailwind CSS",
     icon: faTools,
   },
-  { category: "Databases", items: "MySQL, MongoDB", icon: faDatabase },
+  { category: "Databases", items: "MySQL, PostgreSQL", icon: faDatabase },
   { category: "Web Technologies", items: "HTML, CSS, JS, JSON", icon: faCode },
   { category: "Version Control", items: "Git & GitHub", icon: faTools },
   { category: "Microcontrollers", items: "Arduino, ESP32", icon: faMicrochip },
@@ -40,7 +40,7 @@ export default function About() {
       {/* Personal Info Section */}
       <div className="flex flex-col md:flex-row items-center md:items-start mb-10">
         <div>
-          <h2 className="text-3xl font-semibold mb-6 text-[#444c35]">
+          <h2 className="text-3xl font-semibold mb-6 text-[#444c35] underline">
             Personal Info
           </h2>
           <p className="mb-6 leading-relaxed text-[#444c35]">
@@ -53,30 +53,22 @@ export default function About() {
           </p>
           <p className="leading-relaxed text-[#444c35]">
             My interests include{" "}
-            <span className="font-bold text-[#444c35] italic">
+            <span className="font-bold text-[#444c35] ">
               mobile app development
             </span>
-            ,{" "}
-            <span className="font-bold text-[#444c35] italic">
-              cyber security
-            </span>
-            ,{" "}
-            <span className="font-bold text-[#444c35] italic">
-              machine learning
-            </span>{" "}
+            , <span className="font-bold text-[#444c35]">cyber security</span>,{" "}
+            <span className="font-bold text-[#444c35]">machine learning</span>{" "}
             and{" "}
-            <span className="font-bold text-[#444c35] italic">
-              problem-solving
-            </span>
-            . I am highly motivated to teach others and conduct research in
-            these areas.
+            <span className="font-bold text-[#444c35]">problem-solving</span>. I
+            am highly motivated to teach others and conduct research in these
+            areas.
           </p>
         </div>
       </div>
 
       {/* Education Section */}
       <div className="mb-10">
-        <h3 className="text-2xl font-semibold mb-4 text-[#444c35]">
+        <h3 className="text-2xl font-semibold mb-4 text-[#444c35] underline">
           Education
         </h3>
         <p className="leading-relaxed text-[#444c35]">
@@ -84,22 +76,22 @@ export default function About() {
           <br />
           October 2022 - Present
           <br />
-          CGPA: 3.90 / 4.00 (Till 6th Trimester)
+          CGPA: **** / 4.00 (Till 7th Trimester)
         </p>
       </div>
 
       {/* Skills Section */}
-      <h3 className="text-2xl font-semibold mb-4 text-[#444c35]">Skills</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-black underline">
+        Skills
+      </h3>
       <ul className="space-y-2">
         {skills.map((skill, index) => (
           <li key={index} className="flex items-start">
-            <FontAwesomeIcon
-              icon={skill.icon}
-              className="text-[#728156] mr-2 text-lg md:text-xl" // Adjusted icon size for smaller and larger screens
-            />
             <div>
-              <strong className="text-[#728156]">{skill.category}:</strong>
-              <span className="text-[#88976C]">{skill.items}</span>
+              <strong className="text-[#728156] ">
+                {index + 1}. {skill.category}:{" "}
+              </strong>
+              <span className="text-black">{skill.items}</span>
             </div>
           </li>
         ))}

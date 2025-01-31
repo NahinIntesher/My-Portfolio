@@ -24,12 +24,12 @@ const SocialButton = ({ href, icon, label, bgColor }) => (
 const Contact = () => {
   return (
     <main className="flex items-center justify-center min-h-screen bg-[#E7F5DC] text-[#323826] px-4 py-12">
-      <div className="max-w-3xl w-full bg-[#98ac73] rounded-xl shadow-2xl p-8 backdrop-blur-md">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-[#E7F5DC]">
+      <div className="max-w-3xl w-full bg-white border border-[#728156] rounded-xl shadow-2xl p-8 backdrop-blur-md">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-[#728156]">
           Let's Connect
         </h1>
         <div className="mb-8 text-center">
-          <p className="text-[#e4f0cc]">
+          <p className="text-[#728156]">
             I'm always open to new opportunities and collaborations. Feel free
             to reach out through any of the platforms below:
           </p>

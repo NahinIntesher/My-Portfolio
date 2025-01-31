@@ -16,11 +16,11 @@ const ResumePage = () => {
       <h1 className="text-5xl text-center text-[#98A77C] font-bold mb-10">
         My Resume
       </h1>
-      <div className="bg-[#98A77C] rounded-lg shadow-md p-5 max-w-4xl">
+      <div className="bg-white border border-[#728156] p-6 rounded-lg shadow-md hover:shadow-lg cursor-default max-w-4xl">
         {/* Scrollable Container */}
         <div className="mb-4">
           <div className="text-center flex flex-col items-center">
-            <p className="text-lg text-gray-100 mb-4">
+            <p className="text-lg  mb-4">
               Welcome to my resume page! Here, you can find a detailed overview
               of my professional journey, including my skills, work experience,
               education, and achievements. My resume highlights my expertise in
@@ -28,7 +28,7 @@ const ResumePage = () => {
               problem-solving. It also showcases my commitment to continuous
               learning and my ability to adapt to new challenges.
             </p>
-            <p className="text-lg text-gray-800">
+            <p className="text-lg text-gray-500">
               Click the button below to access my resume in PDF format. Thank
               you for visiting!
             </p>

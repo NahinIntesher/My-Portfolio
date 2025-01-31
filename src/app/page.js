@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </div>
       <div className="mt-16 mb-5 text-center">
-        <p className="text-lg text-[#88976C] mb-4">Want to Specialize in</p>
+        <p className="text-lg  mb-4">Want to Specialize in</p>
         <div className="flex flex-wrap justify-center gap-4">
           {[
             { label: "Mobile App Development", icon: <FaMobileAlt /> },
@@ -50,7 +50,7 @@ export default function Home() {
           ].map(({ label, icon }) => (
             <span
               key={label}
-              className="bg-[#98A77C] text-[#112B13] px-3 py-2 rounded-lg text-sm flex items-center"
+              className="bg-white border border-[#98A77C] px-3 py-2 rounded-lg text-sm flex items-center"
             >
               {icon}
               <span className="ml-2">{label}</span>
