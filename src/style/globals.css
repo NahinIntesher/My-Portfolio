@@ -1,0 +1,32 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+a {
+  @apply text-blue-600 hover:text-blue-800;
+}
+.bg-image {
+  background-image: url('/src//public/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-gradient-overlay {
+  background: linear-gradient(to top, rgba(3, 7, 18, 0.8), rgba(30, 58, 138, 0.8));
+}
+
+/* Ensure text remains visible during webfont load */
+.font-sans {
+  font-display: swap;
+}
