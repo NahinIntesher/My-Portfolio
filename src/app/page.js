@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import profile from "@/public/images/ProfilePic1.jpg";
+import profile from "@/style/images/profilePic1.jpg";
 import TypewriterHeading from "@/components/TypewriterHeading";
 import { FaBrain, FaMobileAlt, FaLaptopCode, FaRobot } from "react-icons/fa";
 import Link from "next/link";
