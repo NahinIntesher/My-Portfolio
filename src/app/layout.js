@@ -13,6 +13,7 @@ const quicksand = Quicksand({
 export const metadata = {
   title: "Nahin Intesher - Portfolio",
   description: "Problem Solver & Dedicated Developer",
+  image: "/images/profilePic.png",
 };
 
 export default function RootLayout({ children }) {
