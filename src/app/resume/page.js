@@ -37,7 +37,7 @@ const ResumePage = () => {
         {/* View Resume Button */}
         <div className="flex flex-col items-center space-y-4">
           <a
-            href="/resume.pdf" // Reference the PDF file in the public folder
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-amber-400 hover:bg-amber-500 text-gray-900 hover:text-gray-900 px-4 py-2 rounded-lg shadow-md flex items-center "
