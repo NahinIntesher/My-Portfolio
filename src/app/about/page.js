@@ -10,7 +10,7 @@ import {
 const skills = [
   {
     category: "Programming Languages",
-    items: "Java, C, C++, Python, Dart, JavaScript, Go",
+    items: "Java, C, C++, Python, Dart, JavaScript",
     icon: faCode,
   },
   {
