@@ -26,7 +26,7 @@ const Achievements = () => {
         >
           My <span className="text-[#728156]">Achievements</span>
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -74,48 +74,6 @@ const Achievements = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Recognition Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-20 bg-[#728156] rounded-xl p-8 text-white"
-        >
-          <h2 className="text-3xl font-bold mb-6">Other Recognitions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Certifications</h3>
-              <ul className="space-y-4">
-                {[
-                  "Google Certified Mobile Web Specialist",
-                  "AWS Certified Developer - Associate",
-                  "Microsoft Certified: Azure AI Engineer Associate"
-                ].map((cert, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="bg-white text-[#728156] rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
-                    {cert}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Publications</h3>
-              <ul className="space-y-4">
-                {[
-                  "Machine Learning for IoT Security - IEEE Journal 2023",
-                  "Building Cross-Platform Apps with Flutter - Medium Publication"
-                ].map((pub, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="bg-white text-[#728156] rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">✓</span>
-                    {pub}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </main>
   );

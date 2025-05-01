@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCode,
@@ -15,28 +15,27 @@ import { motion } from "framer-motion";
 const skills = [
   {
     category: "Programming Languages",
-    items: "Java, C, C++, Python, Dart, JavaScript, TypeScript",
+    items: "Java, C, C++, Python, Dart, JavaScript",
     icon: faCode,
   },
   {
     category: "Frameworks & Libraries",
-    items:
-      "React, Next.js, Node.js, Flutter, React Native, Tailwind CSS, Express",
+    items: "React, Next.js, Node.js, Flutter, Tailwind CSS, Express",
     icon: faTools,
   },
   {
     category: "Databases",
-    items: "MySQL, PostgreSQL, MongoDB, Firebase",
+    items: "MySQL, PostgreSQL",
     icon: faDatabase,
   },
   {
     category: "Web Technologies",
-    items: "HTML5, CSS3, JavaScript ES6+, REST APIs, GraphQL",
+    items: "HTML5, CSS3, JavaScript",
     icon: faCode,
   },
   {
     category: "Version Control",
-    items: "Git, GitHub, GitLab",
+    items: "Git, GitHub",
     icon: faTools,
   },
   {
@@ -46,7 +45,7 @@ const skills = [
   },
   {
     category: "Design & Multimedia",
-    items: "Adobe Photoshop, Illustrator, Figma, Premier Pro",
+    items: "Adobe Photoshop, Illustrator, Figma, Premier Pro, PowerPoint, Jira",
     icon: faPalette,
   },
 ];
@@ -56,13 +55,13 @@ const education = [
     degree: "B.Sc. in Computer Science & Engineering",
     institution: "United International University",
     period: "2022 - Present",
-    details: "CGPA: 3.85/4.00 (Till 7th Trimester)",
+    details: "CGPA: 3.**/4.00 (Till 7th Trimester)",
     icon: faGraduationCap,
   },
   {
     degree: "Higher Secondary Certificate",
-    institution: "Notre Dame College, Dhaka",
-    period: "2019 - 2021",
+    institution: "Dhaka Residential Model College, Dhaka",
+    period: "2018 - 2020",
     details: "GPA: 5.00/5.00 in Science",
     icon: faGraduationCap,
   },
@@ -213,9 +212,9 @@ export default function About() {
               {[
                 "Open Source Contributions",
                 "Technical Writing",
-                "3D Printing",
-                "Robotics",
-                "Photography",
+                "Mentoring & Teaching",
+                "Machine Learning",
+                "Exploring New Technologies",
               ].map((item, i) => (
                 <li key={i} className="flex items-center">
                   <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
