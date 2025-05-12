@@ -7,8 +7,13 @@ import {
   faYoutube,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faPhone,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const SocialButton = ({ href, icon, label, bgColor }) => (
   <motion.a
@@ -26,27 +31,102 @@ const SocialButton = ({ href, icon, label, bgColor }) => (
 const ContactInfoCard = ({ icon, title, value, href }) => (
   <motion.div
     whileHover={{ y: -5 }}
-    className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all"
+    className="flex items-start gap-4 p-6 bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-700"
   >
-    <div className="text-[#728156] text-2xl mt-1">
+    <div className="text-emerald-400 text-2xl mt-1">
       <FontAwesomeIcon icon={icon} />
     </div>
     <div>
-      <h3 className="text-lg font-semibold text-[#3a4628]">{title}</h3>
+      <h3 className="text-lg font-semibold text-gray-200">{title}</h3>
       {href ? (
-        <a href={href} className="text-[#5a6b42] hover:text-[#728156] transition-colors">
+        <a
+          href={href}
+          className="text-gray-300 hover:text-emerald-400 transition-colors"
+        >
           {value}
         </a>
       ) : (
-        <p className="text-[#5a6b42]">{value}</p>
+        <p className="text-gray-300">{value}</p>
       )}
     </div>
   </motion.div>
 );
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [formStatus, setFormStatus] = useState({
+    message: "",
+    isError: false,
+    isSubmitted: false,
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Form validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus({
+        message: "Please fill out all required fields",
+        isError: true,
+        isSubmitted: false,
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormStatus({
+        message: "Please enter a valid email address",
+        isError: true,
+        isSubmitted: false,
+      });
+      return;
+    }
+
+    // Here you would typically send the form data to a server
+    // For this example, we'll just simulate a successful submission
+    setTimeout(() => {
+      setFormStatus({
+        message: "Your message has been sent successfully!",
+        isError: false,
+        isSubmitted: true,
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setFormStatus({
+          message: "",
+          isError: false,
+          isSubmitted: false,
+        });
+      }, 5000);
+    }, 1000);
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#E7F5DC] to-[#C8D9B8] px-4 py-16">
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -54,11 +134,12 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-[#3a4628]">
-            Get In <span className="text-[#728156]">Touch</span>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-100">
+            Get In <span className="text-emerald-400">Touch</span>
           </h1>
-          <p className="text-xl text-[#5a6b42] max-w-3xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Have a project in mind or want to discuss potential opportunities?
+            I'd love to hear from you!
           </p>
         </motion.div>
 
@@ -69,57 +150,95 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white p-8 rounded-xl shadow-xl"
+            className="bg-gray-800 p-8 rounded-xl shadow-xl border border-gray-700"
           >
-            <h2 className="text-2xl font-bold mb-6 text-[#3a4628]">Send Me a Message</h2>
-            <form className="space-y-6">
+            <h2 className="text-2xl font-bold mb-6 text-gray-100">
+              Send Me a Message
+            </h2>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#5a6b42] mb-1">
-                  Your Name
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Your Name <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 border border-[#D8E3D0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#728156]"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-500"
                   placeholder="John Doe"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#5a6b42] mb-1">
-                  Email Address
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Email Address <span className="text-emerald-400">*</span>
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-[#D8E3D0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#728156]"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-500"
                   placeholder="you@example.com"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-[#5a6b42] mb-1">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 border border-[#D8E3D0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#728156]"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-500"
                   placeholder="Project Inquiry"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#5a6b42] mb-1">
-                  Message
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  Message <span className="text-emerald-400">*</span>
                 </label>
                 <textarea
                   id="message"
                   rows="5"
-                  className="w-full px-4 py-3 border border-[#D8E3D0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#728156]"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent placeholder-gray-500"
                   placeholder="Tell me about your project..."
+                  required
                 ></textarea>
               </div>
+
+              {formStatus.message && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    formStatus.isError
+                      ? "bg-red-900 text-red-200"
+                      : "bg-green-900 text-green-200"
+                  }`}
+                >
+                  {formStatus.message}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-[#728156] hover:bg-[#5a6b42] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center"
               >
                 Send Message
               </button>
@@ -158,11 +277,12 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-[#728156] p-8 rounded-xl text-white"
+              className="bg-gray-800 p-8 rounded-xl text-white border border-gray-700 shadow-xl"
             >
               <h3 className="text-xl font-semibold mb-4">Connect With Me</h3>
-              <p className="mb-6">
-                I'm active on these platforms. Feel free to reach out through any of them.
+              <p className="mb-6 text-gray-300">
+                I'm active on these platforms. Feel free to reach out through
+                any of them.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SocialButton
@@ -175,19 +295,19 @@ const Contact = () => {
                   href="https://www.linkedin.com/in/nahin-intesher-903724253/"
                   icon={faLinkedin}
                   label="LinkedIn"
-                  bgColor="bg-blue-600 hover:bg-blue-500"
+                  bgColor="bg-blue-800 hover:bg-blue-700"
                 />
                 <SocialButton
                   href="https://www.facebook.com/naahin.sikdar"
                   icon={faFacebook}
                   label="Facebook"
-                  bgColor="bg-[#3b5998] hover:bg-[#344e86]"
+                  bgColor="bg-indigo-800 hover:bg-indigo-700"
                 />
                 <SocialButton
                   href="mailto:nahinsikdar123@gmail.com"
                   icon={faEnvelope}
                   label="Email"
-                  bgColor="bg-green-600 hover:bg-green-500"
+                  bgColor="bg-emerald-700 hover:bg-emerald-600"
                 />
               </div>
             </motion.div>
@@ -197,15 +317,18 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-8 bg-white p-6 rounded-xl shadow-md"
+              className="mt-8 bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700"
             >
-              <h3 className="text-xl font-semibold mb-4 text-[#3a4628]">Availability</h3>
-              <p className="text-[#5a6b42] mb-4">
-                I'm currently available for freelance projects and full-time opportunities.
+              <h3 className="text-xl font-semibold mb-4 text-gray-100">
+                Availability
+              </h3>
+              <p className="text-gray-300 mb-4">
+                I'm currently available for freelance projects and full-time
+                opportunities.
               </p>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                <span className="text-[#5a6b42]">Available</span>
+                <span className="text-gray-300">Available</span>
               </div>
             </motion.div>
           </div>
@@ -213,5 +336,6 @@ const Contact = () => {
       </div>
     </main>
   );
-}
+};
+
 export default Contact;

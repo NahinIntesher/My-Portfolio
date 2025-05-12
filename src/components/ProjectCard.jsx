@@ -19,7 +19,10 @@ import { motion } from "framer-motion";
 
 const technologyIcons = {
   "React JS": faReact,
+  "Express JS": faNodeJs,
+  "Tailwind CSS": faCss3Alt,
   "Node JS": faNodeJs,
+  PostgreSQL: faDatabase,
   Java: faJava,
   Python: faPython,
   HTML: faHtml5,
