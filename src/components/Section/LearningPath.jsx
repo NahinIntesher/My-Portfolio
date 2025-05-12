@@ -117,7 +117,7 @@ export default function LearningPath() {
                 </div>
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              {/* <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {learningItemsByYear[year].map((item, itemIndex) => (
                   <LearningTimelineItem
                     key={`${year}-${itemIndex}`}
@@ -127,7 +127,7 @@ export default function LearningPath() {
                     isEven={itemIndex % 2 === 0}
                   />
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
