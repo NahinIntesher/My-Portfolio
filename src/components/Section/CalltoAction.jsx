@@ -13,31 +13,37 @@ export default function CallToAction() {
   };
 
   return (
-    <section className="py-16 w-full bg-gradient-to-r from-[#728156] to-[#98A77C] bg-opacity-10">
+    <Section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+      {/* Background gradient blobs */}
+      <div className="absolute opacity-5 w-96 h-96 rounded-full bg-blue-500 -top-20 -left-20 blur-3xl" />
+      <div className="absolute opacity-5 w-96 h-96 rounded-full bg-indigo-500 -bottom-20 -right-20 blur-3xl" />
+
       <motion.div
-        className="container mx-auto px-6 text-center relative z-10"
+        className="relative z-10 container mx-auto px-6 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeIn}
       >
         <motion.h2
-          className="text-4xl sm:text-5xl font-bold mb-6 text-gray-800 dark:text-gray-50"
+          className="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
           variants={fadeIn}
         >
-          Ready to work together?
+          Ready to{" "}
+          <span className="text-blue-600 dark:text-blue-400">
+            work together?
+          </span>
         </motion.h2>
+
         <motion.p
           className="text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-gray-700 dark:text-gray-300"
           variants={fadeIn}
         >
-          I'm currently available for freelance work and exciting
-          collaborations. Let's create something amazing together!
+          I’m currently available for freelance work and exciting
+          collaborations. Let’s create something amazing together!
         </motion.p>
-        <motion.div
-          variants={fadeIn}
-          className="flex justify-center items-center"
-        >
+
+        <motion.div variants={fadeIn} className="flex justify-center">
           <Button
             href="/contact"
             variant="filled"
@@ -47,6 +53,6 @@ export default function CallToAction() {
           </Button>
         </motion.div>
       </motion.div>
-    </section>
+    </Section>
   );
 }
