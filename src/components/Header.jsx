@@ -10,7 +10,7 @@ const navItems = [
   { label: "Projects", path: "/projects" },
   { label: "Achievements", path: "/achievements" },
   { label: "Contact", path: "/contact" },
-  { label: "Blogs", path: "/blogs" },
+  // { label: "Blogs", path: "/blogs" },
   { label: "Resume", path: "/resume" },
 ];
 
@@ -58,13 +58,13 @@ const Navbar = () => {
             onMouseEnter={() => setShowLogoPopup(true)}
             onMouseLeave={() => setShowLogoPopup(false)}
           >
-            <Image
+            {/* <Image
               src={profile}
               alt="Nahin Intesher"
               className="rounded-full h-10 w-10 object-cover border border-gray-600"
               width={40}
               height={40}
-            />
+            /> */}
             <span className="text-gray-200 group-hover:text-emerald-400 transition-all duration-300">
               Nahin Intesher
             </span>
@@ -73,9 +73,7 @@ const Navbar = () => {
 
           {showLogoPopup && (
             <div className="absolute left-0 top-full mt-2 bg-gray-800 text-gray-200 shadow-lg p-3 rounded-lg z-50 w-64 border border-gray-700">
-              <p className="text-sm font-medium">
-                Full-Stack Developer & UI/UX Designer
-              </p>
+              <p className="text-sm font-medium">Full-Stack Developer</p>
             </div>
           )}
         </div>

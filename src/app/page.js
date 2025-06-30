@@ -10,9 +10,9 @@ import Education from "@/components/Section/Education";
 import LearningPath from "@/components/Section/LearningPath";
 import CallToAction from "@/components/Section/CalltoAction";
 
-export default function Home() {
+export default function page() {
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-[#E7F5DC] to-[#D8E9C9] text-[#112B13]">
+    <div>
       <Hero />
       <About />
       <Skills />
