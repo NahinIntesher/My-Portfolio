@@ -35,9 +35,6 @@ export default function About() {
 
   return (
     <Section className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-      <div className="absolute opacity-5 w-96 h-96 rounded-full bg-blue-500 -top-20 -left-20 blur-3xl" />
-      <div className="absolute opacity-5 w-96 h-96 rounded-full bg-indigo-500 -bottom-20 -right-20 blur-3xl" />
-
       <motion.div
         initial="hidden"
         whileInView="visible"

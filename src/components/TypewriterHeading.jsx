@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 export default function TypewriterHeading() {
   const titles = [
     "Computer Science Student",
-    "React Developer",
-    "Backend Developer",
+    "Full-Stack Developer",
     "Machine Learning Enthusiast",
   ];
 
@@ -55,5 +54,5 @@ export default function TypewriterHeading() {
         |
       </span>
     </motion.p>
-    );
+  );
 }
