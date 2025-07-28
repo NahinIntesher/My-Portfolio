@@ -143,7 +143,7 @@ export default function About() {
       category: "Programming Languages",
       items: "Java, C, C++, Python, Dart, JavaScript",
       icon: "💻",
-      percentage: 90,
+      percentage: 85,
     },
     {
       category: "Frameworks & Libraries",
@@ -155,31 +155,31 @@ export default function About() {
       category: "Databases",
       items: "MySQL, PostgreSQL",
       icon: "🗄️",
-      percentage: 80,
+      percentage: 70,
     },
     {
       category: "Web Technologies",
       items: "HTML5, CSS3, JavaScript",
       icon: "🌐",
-      percentage: 92,
+      percentage: 80,
     },
     {
       category: "Version Control",
       items: "Git, GitHub",
       icon: "📊",
-      percentage: 88,
+      percentage: 70,
     },
     {
       category: "IoT & Hardware",
       items: "Arduino, ESP32, Raspberry Pi",
       icon: "🔧",
-      percentage: 75,
+      percentage: 50,
     },
     {
       category: "Design & Multimedia",
       items: "Adobe Creative Suite, Figma",
       icon: "🎨",
-      percentage: 82,
+      percentage: 60,
     },
   ];
 
@@ -225,8 +225,8 @@ export default function About() {
             className="text-xl md:text-2xl text-gray-300 mb-8"
           >
             <TypewriterText
-              text="Passionate Developer & Problem Solver"
-              delay={1000}
+              text="Highly Interested in Quantum Computing"
+              delay={50}
             />
           </motion.div>
         </motion.div>
@@ -336,7 +336,7 @@ export default function About() {
                 degree: "B.Sc. in Computer Science & Engineering",
                 institution: "United International University",
                 period: "2022 - Present",
-                details: "CGPA: 3.90/4.00 (Till 7th Trimester)",
+                details: "CGPA: 3.91/4.00 (Till 8th Trimester)",
                 icon: "🏛️",
               },
               {
@@ -465,7 +465,7 @@ export default function About() {
           >
             <AnimatedIcon icon="🌟" />
             <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-              Beyond Coding
+              My Work & Interests
             </span>
           </motion.h3>
 
@@ -476,14 +476,11 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h4 className="text-2xl font-bold mb-6 text-emerald-400">
-                Interests & Hobbies
-              </h4>
               <div className="space-y-4">
                 {[
                   { item: "Open Source Contributions", icon: "🌐" },
-                  { item: "Technical Writing", icon: "✍️" },
                   { item: "Mentoring & Teaching", icon: "👨‍🏫" },
+                  { item: "Quantum Computing", icon: "⚛️" },
                   { item: "Machine Learning", icon: "🤖" },
                   { item: "Exploring New Technologies", icon: "🔬" },
                 ].map((hobby, i) => (
@@ -522,12 +519,12 @@ export default function About() {
                   whileHover={{ scale: 1.02, x: 10 }}
                   className="border-l-4 border-emerald-400 pl-6 py-4 bg-gradient-to-r from-emerald-500/10 to-transparent rounded-r-lg"
                 >
-                  <p className="text-xl font-medium italic text-emerald-300">
-                    "Write code that humans can understand and machines can
-                    execute efficiently."
+                  <p className="text-xl font-medium text-emerald-300">
+                    "Life is like riding a bicycle. to keep your balance you
+                    must keep moving."
                   </p>
                   <footer className="text-gray-400 mt-2">
-                    — My Coding Mantra
+                    — Albert Einstein
                   </footer>
                 </motion.blockquote>
               </div>
