@@ -11,10 +11,10 @@ export default function Skills() {
     { skill: "Next.js", level: 75, color: "#000000" },
     { skill: "Node.js", level: 75, color: "#339933" },
     { skill: "Python", level: 20, color: "#3776ab" },
-    { skill: "SQL", level: 80, color: "#f29111" },
+    { skill: "SQL", level: 60, color: "#f29111" },
     { skill: "C/C++", level: 80, color: "#00599c" },
-    { skill: "Java", level: 80, color: "#007396" },
-    { skill: "Flutter", level: 55, color: "#02569b" },
+    { skill: "Java", level: 60, color: "#007396" },
+    { skill: "Flutter", level: 45, color: "#02569b" },
   ];
 
   const staggerContainer = {

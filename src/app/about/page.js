@@ -3,24 +3,38 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const FloatingParticles = () => {
-  const particles = Array.from({ length: 20 }, (_, i) => i);
+  const [positions, setPositions] = useState([]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const newPositions = Array.from({ length: 20 }, () => ({
+        initial: {
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+        },
+        animate: {
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+        },
+        duration: Math.random() * 10 + 20,
+      }));
+      setPositions(newPositions);
+    }
+  }, []);
+
+  // Prevent rendering on server (and before useEffect runs)
+  if (typeof window === "undefined" || positions.length === 0) return null;
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {particles.map((particle) => (
+      {positions.map((pos, idx) => (
         <motion.div
-          key={particle}
+          key={idx}
           className="absolute w-1 h-1 bg-emerald-400/30 rounded-full"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-          }}
-          animate={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-          }}
+          initial={pos.initial}
+          animate={pos.animate}
           transition={{
-            duration: Math.random() * 10 + 20,
+            duration: pos.duration,
             repeat: Infinity,
             ease: "linear",
           }}
