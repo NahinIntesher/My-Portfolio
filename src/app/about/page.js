@@ -170,8 +170,8 @@ export default function About() {
   ];
 
   const achievements = [
-    { number: "3.90", label: "CGPA", suffix: "/4.00" },
-    { number: "50+", label: "Projects", suffix: "" },
+    { number: "3.91", label: "CGPA", suffix: "/4.00" },
+    { number: "15+", label: "Projects", suffix: "" },
     { number: "2+", label: "Years", suffix: " Experience" },
     { number: "100%", label: "Dedication", suffix: "" },
   ];
