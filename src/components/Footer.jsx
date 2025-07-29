@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import profile from "@/style/images/CodeScriba.png";
+import profile from "@/style/images/profilePic1.jpg";
 import { Linkedin, Github, Facebook } from "lucide-react";
 
 const navItems = [
@@ -19,7 +19,7 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      href: "https://www.linkedin.com/in/nahin-intesher-903724253/",
+      href: "https://www.linkedin.com/in/nahinintesher/",
       label: "LinkedIn",
       icon: <Linkedin size={18} />,
     },
@@ -29,7 +29,7 @@ const Footer = () => {
       icon: <Github size={18} />,
     },
     {
-      href: "https://www.facebook.com/naahin.sikdar",
+      href: "https://www.facebook.com/nahinnintesher",
       label: "Facebook",
       icon: <Facebook size={18} />,
     },
@@ -45,9 +45,9 @@ const Footer = () => {
               <Image
                 src={profile}
                 alt="Nahin Intesher"
-                className="rounded-full h-8 w-8 border border-gray-700"
-                width={32}
-                height={32}
+                className="rounded-full h-8 w-8  border border-gray-700"
+                width={35}
+                height={35}
               />
               <span className="text-xl font-bold text-emerald-400">
                 Nahin Intesher
@@ -97,7 +97,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="mt-8 pt-4 border-t border-gray-800 text-sm text-center text-gray-500">
           <p>
-            Designed & Developed by{" "}
+            Designed & Developed with Next JS by{" "}
             <span className="text-emerald-400">Nahin Intesher</span>
           </p>
         </div>

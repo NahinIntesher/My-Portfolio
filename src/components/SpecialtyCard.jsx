@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function SpecialtyCard({
   label,
@@ -53,7 +54,7 @@ export function SpecialtyCard({
         <p className="text-gray-600 dark:text-gray-300 mb-6">{description}</p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mt-auto">
+        <div className="flex flex-wrap justify-center gap-2 mt-auto">
           {technologies.map((tech, i) => (
             <motion.span
               key={tech}
@@ -76,28 +77,7 @@ export function SpecialtyCard({
       <div
         className="p-4 text-center border-t border-gray-100 dark:border-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
         style={{ color }}
-      >
-        <a
-          href="#"
-          className="text-sm font-medium flex items-center justify-center"
-        >
-          Learn more
-          <svg
-            className="ml-1 w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg>
-        </a>
-      </div>
+      ></div>
     </motion.div>
   );
 }

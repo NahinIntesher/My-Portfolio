@@ -57,8 +57,12 @@ export default function LearningPath() {
     ],
     2025: [
       {
-        topic: "Machine Learning - *** Currently Learning ***",
-        resources: "Youtube - (Codebasics, Simplilearn), Blogs, Books",
+        topic: "Machine Learning *Currently Learning*",
+        resources: "Coursera, Youtube, Blogs, Books",
+      },
+      {
+        topic: "Quantum Computing *Currently Learning*",
+        resources: "Coursera, Youtube, Books",
       },
     ],
   };

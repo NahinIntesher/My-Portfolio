@@ -7,6 +7,7 @@ export default function TypewriterHeading() {
     "Computer Science Student",
     "Full-Stack Developer",
     "Machine Learning Enthusiast",
+    "Interested in Quantum Computing",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
