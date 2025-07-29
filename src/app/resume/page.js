@@ -19,7 +19,7 @@ const ResumePage = () => {
         transition={{ duration: 0.8 }}
         className="text-5xl font-extrabold text-center text-gray-100 mb-10 drop-shadow-lg"
       >
-        Explore My <span className="text-emerald-400">Resume</span>
+        Explore My <span className="text-emerald-400">Resume and CV</span>
       </motion.h1>
 
       <motion.div
@@ -46,21 +46,37 @@ const ResumePage = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-md text-gray-400 mb-8"
           >
-            Click below to download or view my latest resume in PDF format.
+            Click below to download or view my latest resume and CV in PDF
+            format.
           </motion.p>
 
-          <motion.a
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-7 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-gray-100 text-lg font-semibold rounded-full shadow-lg hover:from-emerald-600 hover:to-emerald-500 hover:shadow-emerald-500/20 transition-all duration-300"
-          >
-            <FontAwesomeIcon icon={faDownload} className="mr-2" />
-            Download Resume
-          </motion.a>
+          <div className="flex justify-center gap-5 mb-6">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-gray-100 text-lg font-semibold rounded-2xl shadow-lg hover:from-emerald-600 hover:to-emerald-500 hover:shadow-emerald-500/20 transition-all duration-300"
+            >
+              <FontAwesomeIcon icon={faDownload} className="mr-2" />
+              Download My Resume
+            </motion.a>
+
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-gray-100 text-lg font-semibold rounded-2xl shadow-lg hover:from-emerald-600 hover:to-emerald-500 hover:shadow-emerald-500/20 transition-all duration-300"
+            >
+              <FontAwesomeIcon icon={faDownload} className="mr-2" />
+              Download My CV
+            </motion.a>
+          </div>
         </div>
       </motion.div>
     </main>

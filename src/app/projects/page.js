@@ -88,7 +88,7 @@ const academicProjects = [
   {
     title: "Jiggasha",
     description: "Jiggasha is an online gamified educational platform",
-    technologies: ["Next JS", "Node JS", "PostgreSQL"],
+    technologies: ["NextJS", "NodeJS", "PostgreSQL"],
     githubLink: "https://github.com/NahinIntesher/Jiggasha",
     date: "05/2025 - Present",
     image:

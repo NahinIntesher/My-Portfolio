@@ -10,16 +10,22 @@ const navItems = [
   { label: "Projects", path: "/projects" },
   { label: "Achievements", path: "/achievements" },
   { label: "Contact", path: "/contact" },
-  // { label: "Blogs", path: "/blogs" },
   { label: "Resume", path: "/resume" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState("Home"); // Default to Home
   const [showLogoPopup, setShowLogoPopup] = useState(false);
 
   useEffect(() => {
+    // Set active item based on current path
+    const currentPath = window.location.pathname;
+    const activeNav = navItems.find((item) => item.path === currentPath);
+    if (activeNav) {
+      setActiveItem(activeNav.label);
+    }
+
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsOpen(false);
@@ -28,15 +34,6 @@ const Navbar = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Scroll logic can be implemented here
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => {
@@ -58,13 +55,6 @@ const Navbar = () => {
             onMouseEnter={() => setShowLogoPopup(true)}
             onMouseLeave={() => setShowLogoPopup(false)}
           >
-            {/* <Image
-              src={profile}
-              alt="Nahin Intesher"
-              className="rounded-full h-10 w-10 object-cover border border-gray-600"
-              width={40}
-              height={40}
-            /> */}
             <span className="text-gray-200 group-hover:text-emerald-400 transition-all duration-300">
               Nahin Intesher
             </span>
@@ -73,7 +63,7 @@ const Navbar = () => {
 
           {showLogoPopup && (
             <div className="absolute left-0 top-full mt-2 bg-gray-800 text-gray-200 shadow-lg p-3 rounded-lg z-50 w-64 border border-gray-700">
-              <p className="text-sm font-medium">Full-Stack Developer</p>
+              <p className="text-sm font-medium">A Computer Science Student</p>
             </div>
           )}
         </div>
@@ -114,15 +104,21 @@ const Navbar = () => {
               <li key={item.label} className="relative group">
                 <Link
                   href={item.path}
-                  className={`block px-4 py-3 md:px-3 md:py-2 lg:px-4 lg:py-2 text-gray-300 hover:text-emerald-400 transition-colors duration-300 ${
+                  className={`block px-4 py-3 md:px-3 md:py-2 lg:px-4 lg:py-2 transition-colors duration-300 ${
                     activeItem === item.label
                       ? "text-emerald-400 font-medium"
-                      : ""
+                      : "text-gray-300 hover:text-emerald-400"
                   }`}
                   onClick={() => handleItemClick(item.label)}
                 >
                   {item.label}
-                  <span className="block absolute left-0 bottom-0 h-0.5 bg-emerald-500 w-0 group-hover:w-full transition-all duration-300"></span>
+                  <span
+                    className={`block absolute left-0 bottom-0 h-0.5 bg-emerald-500 transition-all duration-300 ${
+                      activeItem === item.label
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
                 </Link>
               </li>
             ))}

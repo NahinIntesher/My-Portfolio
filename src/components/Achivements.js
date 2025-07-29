@@ -41,17 +41,9 @@ export const achievements = [
       "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80",
   },
   {
-    title: "100% scholarship in 3 trimesters",
+    title: "50% scholarship in 4 trimesters",
     description:
-      "Received a 100% scholarship for academic excellence in three trimesters.",
-    icon: faStar,
-    image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
-  },
-  {
-    title: "50% scholarship in 3 trimesters",
-    description:
-      "Received a 50% scholarship for academic performance in three trimesters.",
+      "Received a 50% scholarship for academic performance in four trimesters.",
     icon: faStar,
     image:
       "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",

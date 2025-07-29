@@ -171,13 +171,13 @@ export default function About() {
     },
     {
       category: "IoT & Hardware",
-      items: "Arduino, ESP32, Raspberry Pi",
+      items: "Arduino, ESP32",
       icon: "🔧",
       percentage: 50,
     },
     {
       category: "Design & Multimedia",
-      items: "Adobe Creative Suite, Figma",
+      items: "Adobe Illustrator, Figma, PowerPoint",
       icon: "🎨",
       percentage: 60,
     },
@@ -185,8 +185,8 @@ export default function About() {
 
   const achievements = [
     { number: "3.91", label: "CGPA", suffix: "/4.00" },
-    { number: "15+", label: "Projects", suffix: "" },
-    { number: "2+", label: "Years", suffix: " Experience" },
+    { number: "15+", label: "Large and Small Projects", suffix: "" },
+    { number: "2+", label: "Experience Years", suffix: "" },
     { number: "100%", label: "Dedication", suffix: "" },
   ];
 
@@ -225,7 +225,7 @@ export default function About() {
             className="text-xl md:text-2xl text-gray-300 mb-8"
           >
             <TypewriterText
-              text="Highly Interested in Quantum Computing"
+              text="A CSE Student with a Strong Interest in Quantum Computing"
               delay={50}
             />
           </motion.div>
@@ -268,11 +268,11 @@ export default function About() {
         </motion.div>
 
         {/* Personal Profile */}
-        <GlowingCard className="p-8 md:p-12 mb-16">
-          <div className="flex flex-col lg:flex-row items-start gap-8">
-            <div className="flex-1">
+        <GlowingCard className="p-6 sm:p-8 md:p-10 lg:p-12 mb-12 md:mb-16">
+          <div className="flex flex-col lg:flex-row items-start gap-6 md:gap-8">
+            <div className="flex-1 order-2 lg:order-1">
               <motion.h2
-                className="text-4xl font-bold mb-6 flex items-center gap-3"
+                className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 flex items-center gap-3"
                 whileHover={{ x: 10 }}
               >
                 <AnimatedIcon icon="👨‍💼" />
@@ -286,32 +286,29 @@ export default function About() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="space-y-6 text-gray-300 text-lg leading-relaxed"
+                className="space-y-4 sm:space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed"
               >
                 <p>
                   Hello! I'm{" "}
-                  <span className="font-bold text-emerald-400 text-xl">
+                  <span className="font-bold text-emerald-400 text-lg sm:text-xl">
                     Nahin Intesher
                   </span>
                   , a passionate Computer Science student and full-stack
-                  developer with expertise in mobile app development, AI, and
-                  cybersecurity. I thrive on solving complex problems and
-                  building innovative solutions that make a real impact.
+                  developer. I want to specialize in Quantum Computing.
                 </p>
                 <p>
-                  My journey in technology began at a young age, and I've since
-                  developed a diverse skill set spanning multiple programming
-                  languages and frameworks. When I'm not coding, you can find me
-                  contributing to open-source projects, mentoring junior
-                  developers, or exploring the latest advancements in machine
-                  learning.
+                  My journey in technology began after admitting into
+                  University, and I've since developed a diverse skill set
+                  spanning multiple programming languages and frameworks by
+                  maintaining a decent CGPA. When I'm not coding, you can find
+                  me exploring the latest advancements in machine learning.
                 </p>
               </motion.div>
             </div>
 
             <motion.div
               whileHover={{ rotate: 5, scale: 1.05 }}
-              className="w-64 h-64 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full flex items-center justify-center text-6xl border-4 border-emerald-400/30"
+              className="order-1 lg:order-2 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto lg:mx-0 mb-6 lg:mb-0 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full flex items-center justify-center text-4xl sm:text-5xl md:text-6xl border-4 border-emerald-400/30"
             >
               👨‍💻
             </motion.div>
@@ -319,9 +316,9 @@ export default function About() {
         </GlowingCard>
 
         {/* Education */}
-        <GlowingCard className="p-8 md:p-12 mb-16">
+        <GlowingCard className="p-6 sm:p-8 md:p-10 lg:p-12 mb-12 md:mb-16">
           <motion.h3
-            className="text-3xl font-bold mb-8 flex items-center gap-3"
+            className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 flex items-center gap-3"
             whileHover={{ x: 10 }}
           >
             <AnimatedIcon icon="🎓" />
@@ -330,7 +327,7 @@ export default function About() {
             </span>
           </motion.h3>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {[
               {
                 degree: "B.Sc. in Computer Science & Engineering",
@@ -353,18 +350,25 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="flex items-start gap-6 p-6 bg-gray-700/50 rounded-xl border border-gray-600/50"
+                className="flex items-start gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-700/50 rounded-xl border border-gray-600/50"
               >
-                <AnimatedIcon icon={edu.icon} className="text-3xl mt-2" />
+                <AnimatedIcon
+                  icon={edu.icon}
+                  className="text-2xl sm:text-3xl mt-1 sm:mt-2"
+                />
                 <div>
-                  <h4 className="text-xl font-bold text-emerald-400">
+                  <h4 className="text-lg sm:text-xl font-bold text-emerald-400">
                     {edu.degree}
                   </h4>
-                  <p className="text-lg font-medium text-cyan-400 mb-2">
+                  <p className="text-base sm:text-lg font-medium text-cyan-400 mb-1 sm:mb-2">
                     {edu.institution}
                   </p>
-                  <p className="text-gray-400 mb-2">{edu.period}</p>
-                  <p className="text-gray-300">{edu.details}</p>
+                  <p className="text-sm sm:text-base text-gray-400 mb-1 sm:mb-2">
+                    {edu.period}
+                  </p>
+                  <p className="text-sm sm:text-base text-gray-300">
+                    {edu.details}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -372,9 +376,9 @@ export default function About() {
         </GlowingCard>
 
         {/* Skills Section */}
-        <GlowingCard className="p-8 md:p-12 mb-16">
+        <GlowingCard className="p-6 sm:p-8 md:p-10 lg:p-12 mb-12 md:mb-16">
           <motion.h3
-            className="text-3xl font-bold mb-8 flex items-center gap-3"
+            className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8 flex items-center gap-3"
             whileHover={{ x: 10 }}
           >
             <AnimatedIcon icon="💡" />
@@ -383,9 +387,9 @@ export default function About() {
             </span>
           </motion.h3>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Skills Cards */}
-            <div className="space-y-6">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
+            {/* Skills Cards - Now appears first on mobile */}
+            <div className="order-2 lg:order-1 space-y-4 sm:space-y-6 w-full lg:w-1/2">
               {skills.map((skill, index) => (
                 <motion.div
                   key={index}
@@ -397,15 +401,20 @@ export default function About() {
                     scale: 1.03,
                     boxShadow: "0 10px 30px rgba(16, 185, 129, 0.2)",
                   }}
-                  className="p-6 bg-gradient-to-r from-gray-700/50 to-gray-600/50 rounded-xl border border-gray-600/50"
+                  className="p-4 sm:p-6 bg-gradient-to-r from-gray-700/50 to-gray-600/50 rounded-xl border border-gray-600/50"
                 >
-                  <div className="flex items-start gap-4">
-                    <AnimatedIcon icon={skill.icon} className="text-2xl mt-1" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <AnimatedIcon
+                      icon={skill.icon}
+                      className="text-xl sm:text-2xl mt-1"
+                    />
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-emerald-400 mb-2">
+                      <h4 className="text-base sm:text-lg font-bold text-emerald-400 mb-1 sm:mb-2">
                         {skill.category}
                       </h4>
-                      <p className="text-gray-300 mb-3">{skill.items}</p>
+                      <p className="text-sm sm:text-base text-gray-300 mb-2 sm:mb-3">
+                        {skill.items}
+                      </p>
                       <SkillBar
                         skill={skill.category}
                         percentage={skill.percentage}
@@ -417,17 +426,17 @@ export default function About() {
               ))}
             </div>
 
-            {/* 3D Skills Visualization */}
+            {/* 3D Skills Visualization - Appears second on mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center"
+              className="order-1 lg:order-2 flex items-center justify-center w-full lg:w-1/2 mb-6 lg:mb-0"
             >
-              <div className="relative w-80 h-80">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
                 {skills.map((skill, index) => {
                   const angle = (index * 360) / skills.length;
-                  const radius = 120;
+                  const radius = 100;
                   const x = Math.cos((angle * Math.PI) / 180) * radius;
                   const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -439,17 +448,17 @@ export default function About() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + 0.5 }}
                       whileHover={{ scale: 1.3, zIndex: 10 }}
-                      className="absolute w-12 h-12 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-xl cursor-pointer shadow-lg"
+                      className="absolute w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-lg sm:text-xl cursor-pointer shadow-lg"
                       style={{
-                        left: `calc(50% + ${x}px - 24px)`,
-                        top: `calc(50% + ${y}px - 24px)`,
+                        left: `calc(50% + ${x}px - ${20}px)`,
+                        top: `calc(50% + ${y}px - ${20}px)`,
                       }}
                     >
                       {skill.icon}
                     </motion.div>
                   );
                 })}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center text-2xl">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center text-xl sm:text-2xl">
                   🚀
                 </div>
               </div>

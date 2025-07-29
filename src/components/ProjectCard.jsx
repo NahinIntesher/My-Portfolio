@@ -22,16 +22,18 @@ const technologyIcons = {
   "Express JS": faNodeJs,
   "Tailwind CSS": faCss3Alt,
   "Node JS": faNodeJs,
+  NodeJS: faNodeJs,
   PostgreSQL: faDatabase,
   Java: faJava,
   Python: faPython,
   HTML: faHtml5,
   CSS: faCss3Alt,
   Flutter: faAndroid,
-  "Next JS": faReact, // Use React icon for Next.js
-  JavaFX: faJava, // Use Java icon for JavaFX
-  JavaScript: faJsSquare, // JavaScript icon
-  MySQL: faDatabase, // Database icon for MySQL
+  "Next JS": faReact,
+  NextJS: faReact,
+  JavaFX: faJava,
+  JavaScript: faJsSquare,
+  MySQL: faDatabase,
 };
 
 const ProjectCard = ({
@@ -45,14 +47,12 @@ const ProjectCard = ({
   // Card hover animation
   const cardHover = {
     rest: {
-      scale: 1,
       transition: {
         duration: 0.2,
         ease: "easeOut",
       },
     },
     hover: {
-      scale: 1.03,
       boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
       transition: {
         duration: 0.3,

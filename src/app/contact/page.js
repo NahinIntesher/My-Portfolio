@@ -21,7 +21,7 @@ const SocialButton = ({ href, icon, label, bgColor }) => (
     target="_blank"
     rel="noopener noreferrer"
     whileHover={{ y: -5, scale: 1.03 }}
-    className={`flex items-center justify-center ${bgColor} text-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all`}
+    className={`flex items-center justify-center ${bgColor} text-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg`}
   >
     <FontAwesomeIcon icon={icon} className="w-5 h-5 mr-3" />
     <span className="whitespace-nowrap">{label}</span>
@@ -263,7 +263,7 @@ const Contact = () => {
               <ContactInfoCard
                 icon={faPhone}
                 title="Phone"
-                value="+880 1XXX XXX XXX"
+                value="01815-808291"
               />
               <ContactInfoCard
                 icon={faMapMarkerAlt}
@@ -289,25 +289,25 @@ const Contact = () => {
                   href="https://github.com/nahinintesher"
                   icon={faGithub}
                   label="GitHub"
-                  bgColor="bg-gray-700 hover:bg-gray-600"
+                  bgColor="bg-gray-700  hover:text-white"
                 />
                 <SocialButton
-                  href="https://www.linkedin.com/in/nahin-intesher-903724253/"
+                  href="https://www.linkedin.com/in/nahinintesher"
                   icon={faLinkedin}
                   label="LinkedIn"
-                  bgColor="bg-blue-800 hover:bg-blue-700"
+                  bgColor="bg-blue-800  hover:text-white"
                 />
                 <SocialButton
-                  href="https://www.facebook.com/naahin.sikdar"
+                  href="https://www.facebook.com/naahinintesher"
                   icon={faFacebook}
                   label="Facebook"
-                  bgColor="bg-indigo-800 hover:bg-indigo-700"
+                  bgColor="bg-indigo-800  hover:text-white"
                 />
                 <SocialButton
                   href="mailto:nahinsikdar123@gmail.com"
                   icon={faEnvelope}
                   label="Email"
-                  bgColor="bg-emerald-700 hover:bg-emerald-600"
+                  bgColor="bg-emerald-700 hover:text-white"
                 />
               </div>
             </motion.div>
