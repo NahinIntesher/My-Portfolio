@@ -64,7 +64,7 @@ const ProjectCard = ({
   // Image hover animation
   const imageHover = {
     rest: { scale: 1 },
-    hover: { scale: 1.05 },
+    hover: { scale: 1.03 },
   };
 
   // Tech badges animation
@@ -79,7 +79,7 @@ const ProjectCard = ({
       whileHover="hover"
       animate="rest"
       variants={cardHover}
-      className="bg-white border border-[#728156] shadow-lg rounded-lg overflow-hidden text-[#112B13]"
+      className="bg-gray-800 text-white border border-gray-600 shadow-lg rounded-lg overflow-hidden "
     >
       {/* Image Container with Overflow Hidden */}
       <div className="relative w-full h-48 overflow-hidden">
@@ -93,7 +93,7 @@ const ProjectCard = ({
               className="object-cover"
             />
           ) : (
-            <div className="w-full h-full bg-[#B6C99B] flex items-center justify-center">
+            <div className="w-full h-full bg-emerald-700 flex items-center justify-center">
               <span className="text-2xl font-bold text-white">
                 {title.charAt(0)}
               </span>
@@ -104,17 +104,17 @@ const ProjectCard = ({
 
       {/* Content Section */}
       <div className="p-6">
-        <h3 className="text-xl text-[#728156] font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl text-white font-semibold mb-2">{title}</h3>
         <p className="text-sm mb-4 h-12 overflow-hidden">{description}</p>
 
         <div className="mb-4">
           <h4 className="font-semibold mb-2">Technologies:</h4>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 text-white">
             {technologies.map((tech, index) => (
               <motion.span
                 key={index}
                 variants={techBadge}
-                className="flex items-center bg-[#B6C99B] px-2 py-1 rounded text-sm transition-all"
+                className="flex items-center bg-emerald-800 px-2 py-1 rounded text-sm transition-all"
               >
                 <FontAwesomeIcon
                   icon={technologyIcons[tech] || faCode}
@@ -127,7 +127,7 @@ const ProjectCard = ({
         </div>
 
         <div className="flex justify-between items-center">
-          <span className="text-sm text-[#88976C]">{date}</span>
+          <span className="text-sm text-white">{date}</span>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <CustomButtonTargetBlanK text="View on GitHub" link={githubLink} />
           </motion.div>
