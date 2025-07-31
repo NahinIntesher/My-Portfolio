@@ -1,37 +1,29 @@
 export const BlogTopics = [
   {
     id: 1,
-    title: "GoLang",
-    description:
-      "Learn about GoLang, a statically typed, compiled programming language designed at Google.",
-    href: "/blogs/golang",
-  },
-  {
-    id: 2,
-    title: "Rust",
-    description:
-      "Explore Rust, a systems programming language that focuses on safety and performance.",
-    href: "/blogs/rust",
-  },
-  {
-    id: 3,
     title: "C++",
     description:
       "Dive into C++, a powerful general-purpose programming language with object-oriented features.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
     href: "/blogs/cpp",
   },
   {
-    id: 4,
+    id: 2,
+    title: "JavaScript",
+    description:
+      "Understand JavaScript, a popular scripting language widely used in web development and server-side applications.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    href: "/blogs/javascript",
+  },
+  {
+    id: 3,
     title: "Python",
     description:
       "Discover Python, a versatile and beginner-friendly programming language used in various domains.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
     href: "/blogs/python",
-  },
-  {
-    id: 5,
-    title: "JavaScript",
-    description:
-      "Understand JavaScript, a popular scripting language widely used in web development.",
-    href: "/blogs/javascript",
   },
 ];

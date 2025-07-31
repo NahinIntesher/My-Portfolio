@@ -158,7 +158,7 @@ function Projects() {
           variants={headerAnimation}
           className="text-4xl sm:text-5xl font-bold mb-12 sm:mb-16 text-center"
         >
-          My <span className="text-white">Projects</span>
+          My <span className="text-emerald-500">Projects</span>
         </motion.h1>
 
         <section className="mb-20">
@@ -169,7 +169,7 @@ function Projects() {
             className="mb-8"
           >
             <h2 className="text-3xl font-semibold mb-2">Personal Projects</h2>
-            <div className="w-24 h-1 bg-[#728156] rounded-full"></div>
+            <div className="w-24 h-1 bg-emerald-500 rounded-full"></div>
           </motion.div>
 
           <motion.div
@@ -199,7 +199,7 @@ function Projects() {
             className="mb-8"
           >
             <h2 className="text-3xl font-semibold mb-2">Academic Projects</h2>
-            <div className="w-24 h-1 bg-[#B6C99B] rounded-full"></div>
+            <div className="w-24 h-1 bg-emerald-500 rounded-full"></div>
           </motion.div>
 
           <motion.div

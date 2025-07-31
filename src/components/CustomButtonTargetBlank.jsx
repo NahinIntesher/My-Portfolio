@@ -5,7 +5,7 @@ function CustomButtonTargetBlank({ text, link }) {
     <Link
       href={link}
       target="_blank"
-      className="inline-block bg-emerald-700 text-white px-6 py-2 rounded-lg hover:bg-emerald-600 hover:text-black transition-all duration-300"
+      className="flex bg-emerald-700 text-center text-white px-2 py-1 sm:px-2 sm:py-1 rounded-lg hover:bg-emerald-600 hover:text-black transition-all duration-300"
     >
       {text}
     </Link>
