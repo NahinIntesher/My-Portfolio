@@ -61,6 +61,13 @@ function TimelineComponent({ period, title, subtitle, description, index }) {
 export default function Education() {
   const educationItems = [
     {
+      period: "2016 - 2018",
+      title: "Secondary School Certificate (SSC)",
+      subtitle: "Shamshul Hoque Khan School & College",
+      description:
+        "Focused on all academic subjects, more on Physics and Mathematics.",
+    },
+    {
       period: "2018 - 2020",
       title: "Higher Secondary Certificate (HSC)",
       subtitle: "Dhaka Residential Model College",
@@ -78,7 +85,6 @@ export default function Education() {
 
   return (
     <Section className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
-
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
