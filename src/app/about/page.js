@@ -33,11 +33,11 @@ const FloatingParticles = () => {
           className="absolute w-1 h-1 bg-emerald-400/30 rounded-full"
           initial={pos.initial}
           animate={pos.animate}
-          transition={{
-            duration: pos.duration,
-            repeat: Infinity,
-            ease: "linear",
-          }}
+          // transition={{
+          //   duration: pos.duration,
+          //   repeat: Infinity,
+          //   ease: "linear",
+          // }}
         />
       ))}
     </div>
@@ -50,9 +50,9 @@ const GlowingCard = ({ children, delay = 0, className = "" }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay }}
+      // transition={{ duration: 0.8, delay }}
       whileHover={{
-        scale: 1.02,
+        // scale: 1.02,
         boxShadow: "0 25px 50px -12px rgba(16, 185, 129, 0.25)",
       }}
       className={`relative overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-2xl border border-gray-700/50 shadow-2xl ${className}`}
@@ -67,7 +67,7 @@ const AnimatedIcon = ({ icon, className = "" }) => {
   return (
     <motion.div
       whileHover={{
-        scale: 1.2,
+        // scale: 1.2,s
         rotate: 360,
         color: "#10b981",
       }}
@@ -343,13 +343,20 @@ export default function About() {
                 details: "GPA: 5.00/5.00 in Science",
                 icon: "📚",
               },
+              {
+                degree: "Secondary School Certificate",
+                institution: "Shamshul Hoque Khan School and College, Dhaka",
+                period: "2016 - 2018",
+                details: "GPA: 5.00/5.00 in Science",
+                icon: "📖",
+              },
             ].map((edu, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                // transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="flex items-start gap-4 sm:gap-6 p-4 sm:p-6 bg-gray-700/50 rounded-xl border border-gray-600/50"
               >
                 <AnimatedIcon
