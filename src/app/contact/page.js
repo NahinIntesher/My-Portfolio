@@ -73,10 +73,9 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       setFormStatus({
         message: "Please fill out all required fields",
@@ -86,7 +85,6 @@ const Contact = () => {
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setFormStatus({
@@ -97,32 +95,47 @@ const Contact = () => {
       return;
     }
 
-    // Here you would typically send the form data to a server
-    // For this example, we'll just simulate a successful submission
-    setTimeout(() => {
-      setFormStatus({
-        message: "Your message has been sent successfully!",
-        isError: false,
-        isSubmitted: true,
+    try {
+      const response = await fetch("https://formspree.io/f/myzpdezj", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      // Clear success message after 5 seconds
-      setTimeout(() => {
+      if (response.ok) {
         setFormStatus({
-          message: "",
+          message: "Your message has been sent successfully!",
           isError: false,
-          isSubmitted: false,
+          isSubmitted: true,
         });
-      }, 5000);
-    }, 1000);
+
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        setTimeout(() => {
+          setFormStatus({
+            message: "",
+            isError: false,
+            isSubmitted: false,
+          });
+        }, 5000);
+      } else {
+        throw new Error("Submission failed.");
+      }
+    } catch (err) {
+      setFormStatus({
+        message: "Something went wrong. Please try again later.",
+        isError: true,
+        isSubmitted: false,
+      });
+    }
   };
 
   return (
@@ -298,7 +311,7 @@ const Contact = () => {
                   bgColor="bg-blue-800  hover:text-white"
                 />
                 <SocialButton
-                  href="https://www.facebook.com/naahinintesher"
+                  href="https://www.facebook.com/nahinnintesher"
                   icon={faFacebook}
                   label="Facebook"
                   bgColor="bg-indigo-800  hover:text-white"
