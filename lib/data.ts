@@ -10,10 +10,10 @@ export const profile = {
   email: "nahinsikdar123@gmail.com",
   phone: "+880 1815-808291",
   phoneHref: "tel:+8801815808291",
-  cv: "/cv.pdf",
+  cv: "/cv",
   github: "https://github.com/nahinintesher",
   linkedin: "https://www.linkedin.com/in/nahinintesher",
-  website: "https://nahin.vercel.app",
+  website: "https://nahin.com.bd",
 };
 
 export const heroBio =
@@ -22,19 +22,14 @@ export const heroBio =
 export const about = {
   paragraphs: [
     "I am a final-trimester Computer Science & Engineering student at United International University, Dhaka, with a CGPA of 3.93/4.00. My coursework — from Digital Image Processing to Machine Learning — pulled me toward the intersection of Computer Vision, Human-Computer Interaction, and Assistive Technology.",
-    "A recurring question runs through my work: how can intelligent systems genuinely help people? My undergraduate thesis, Bridging the Gap, studies how vulnerable communities — older adults and younger users — perceive AI-generated synthetic media, and turns those insights into an AI-awareness tool built from participants' own data. Alongside it, I am developing SIDAS, a wearable assistive navigation system for visually impaired users.",
+    "A recurring question runs through my work: how can intelligent systems genuinely help people? My undergraduate thesis, Bridging the Gap, studies how vulnerable communities — older adults and younger users — perceive AI-generated synthetic media, and turns those insights into an AI-awareness tool built from participants' own data.",
     "Teaching runs parallel to my research. I have served as an Undergraduate Teaching Assistant at UIU since 2023, and I run Diganta Coaching Center, where I teach school students — daily proof that explaining an idea clearly is as demanding, and as rewarding, as building one.",
   ],
   goal: "Looking for opportunities to build intelligent, human-centric systems for practical applications — through teaching, research, collaboration, and further studies.",
 };
 
 /* CV er Research Interests section er sathe exact match */
-export const researchInterests = [
-  "Human-Computer Interaction",
-  "Computer Vision",
-  "Deep Learning",
-  "Assistive Technology",
-];
+export const researchInterests = ["Human-Computer Interaction", "Computer Vision", "Quantum Machine Learning"];
 
 /* ---------------- Research ---------------- */
 export type ResearchItem = {
@@ -78,7 +73,7 @@ export const research: ResearchItem[] = [
       "Reproducing and Evaluating Security Mechanisms for the Model Context Protocol (MCP)",
     desc: "Re-implemented and evaluated four security frameworks — SAMOS, AgentBound, MCPShield, and Breaking the Protocol — on a dataset of 299 MCP servers and 27,861 metadata entries. Controlled experiments covered least-privilege capability boundaries, gateway information-flow control, metadata misalignment detection (78.38% detection rate), and protocol-level vulnerabilities. Reproduced metrics were benchmarked against the original papers, highlighting limitations in LLM agent tool integration and defense-in-depth strategies.",
     areas: ["LLM Agents", "MCP Security", "Reproducibility"],
-    status: "Primary Author · 2026 · Manuscript written, unpublished",
+    status: "Author · 2026 · Manuscript written, unpublished",
   },
   {
     index: "R·04",
@@ -86,7 +81,7 @@ export const research: ResearchItem[] = [
       "Robustness-Efficiency Trade-offs of INT8 Quantization on Resource-Constrained Edge Devices",
     desc: "A systematic evaluation of FP32, INT8 Post-Training Quantization (PTQ), and INT8 Quantization-Aware Training (QAT) using custom TinyCNN and MobileNetV2 on CIFAR-10 and CIFAR-10-C. Proposes INT8-RPTQ, a degradation-aware PTQ calibration strategy that improves robustness to noise, blur, and compression without full QAT retraining, and analyses deployment trade-offs across latency, peak memory, throughput, power consumption, and energy per inference.",
     areas: ["Quantization", "Edge AI", "Robustness", "Deep Learning"],
-    status: "Primary Author · Manuscript written, unpublished",
+    status: "Primary Author · 2026 · Manuscript written, unpublished",
   },
   {
     index: "R·05",
@@ -99,18 +94,6 @@ export const research: ResearchItem[] = [
       "Qualitative Research",
     ],
     status: "Qualitative Study · 2024",
-  },
-  {
-    index: "R·06",
-    title:
-      "SIDAS: A Spatial-Intent-Decision Adaptive System for Assistive Indoor Navigation for Visually Impaired People",
-    desc: "A wearable AI navigation system designed to help visually impaired people move around more safely and independently. It uses a smartphone camera, AI-based depth perception, and onboard sensors to understand obstacles and decide the safest direction in real time — guiding the user through smartwatch vibrations and spatial audio, while keeping critical safety decisions on-device for low latency.",
-    areas: [
-      "Assistive Technology",
-      "Computer Vision",
-      "Artificial Intelligence",
-    ],
-    status: "Personal Research Project · Ongoing",
   },
 ];
 
@@ -196,17 +179,6 @@ export const publications: Publication[] = [
       "Unpublished manuscript",
     ),
   },
-  // {
-  //   id: "p5",
-  //   index: "P·05",
-  //   title: "SIDAS: A Spatial-Intent-Decision Adaptive System for Assistive Indoor Navigation for Visually Impaired People",
-  //   type: "Manuscript",
-  //   year: "2026",
-  //   status: "In preparation",
-  //   abstract:
-  //     "SIDAS is a wearable AI navigation system that helps visually impaired people move more safely and independently, using a smartphone camera, AI-based depth perception, and onboard sensors to decide the safest direction in real time, guiding the user through smartwatch vibrations and spatial audio while keeping critical decisions on-device. A manuscript describing the system design is in preparation.",
-  //   bibtex: bib("intesher2026sidas", "SIDAS: A Spatial-Intent-Decision Adaptive System for Assistive Indoor Navigation for Visually Impaired People", "Manuscript in preparation"),
-  // },
 ];
 
 /* ---------------- Education ---------------- */
@@ -253,7 +225,8 @@ export const education: EducationItem[] = [
     result: "GPA 5.00 / 5.00",
     notes: [],
   },
-  // JSC (2015, same school, GPA 5.00/5.00) — website-e intentionally bad;
+  { degree: "Junior School Certificate (Science)", school: "Shamshul Haque Khan School and College", place: "Dhaka, Bangladesh", years: "2015", result: "GPA 5.00 / 5.00", notes: [] },
+  // Earlier education records retained.
   // firete chaile niche er pattern-e ekta entry copy korun:
   // { degree: "Junior School Certificate (Science)", school: "Shamshul Haque Khan School & College", place: "Dhaka, Bangladesh", years: "2015", result: "GPA 5.00 / 5.00", notes: [] },
 ];
@@ -270,13 +243,15 @@ export type TeachingEntry = {
 
 export const teaching: TeachingEntry[] = [
   {
-    period: "2023 - Present",
+    period: "2023 - 2026",
     role: "Undergraduate Teaching Assistant",
     org: "United International University",
     place: "Dhaka, Bangladesh",
     desc: "Appointed as an undergraduate TA at the Department of CSE, supporting course instructors with academic problem-solving and concept clarification alongside my own studies.",
     points: [
       "Guided many students through academic problems and core technical concepts with practical exercises.",
+      "Supported students in Data Structures and Algorithms, Object-Oriented Programming, Structured Programming Language, and Introduction to Computer Systems.",
+      "Conducted lab sessions, mentored students on programming and debugging, held consultations, and graded lab work and assessments with constructive technical feedback.",
     ],
   },
   {
@@ -314,16 +289,9 @@ export type Project = {
 };
 
 export const selectedProjects: Project[] = [
-  // {
-  //   title: "SIDAS — Assistive Indoor Navigation for Visually Impaired People",
-  //   desc: "A wearable AI navigation system combining a smartphone camera, AI-based depth perception, and onboard sensors to decide the safest direction in real time — guiding users through smartwatch vibrations and spatial audio, with critical decisions kept on-device for low latency.",
-  //   tech: ["Python", "PyTorch", "OpenCV"], // TODO: SIDAS-er specific repo thakle github-e repo link din
-  //   year: "2025 - Ongoing",
-  //   github: "https://github.com/nahinintesher",
-  // },
   {
-    title: "Deepfake Detection System — Thesis Project",
-    desc: "Video deepfake detection combining a Vision Transformer backbone with LSTM-based temporal modeling, evaluated on Celeb-DF-v2, FaceForensics++ (C23), and the Arabic Deepfake dataset.",
+    title: "Deepfake Detection System (DeepShield) — Thesis Project",
+    desc: "Video deepfake detection combining a Swin Transformer and DCT backbone with a Temporal Transformer. Datasets include Celeb-DF-v2, FaceForensics++ (C23), and the Arabic Deepfake dataset.",
     tech: [
       "Python",
       "PyTorch",
@@ -332,7 +300,7 @@ export const selectedProjects: Project[] = [
       "Swin + DCT",
       "Temporal Transformer",
     ],
-    year: "11/2025 - Present",
+    year: "06/2025 - 10/2026",
     github: "https://github.com/NahinIntesher/deepshield",
   },
   {
@@ -360,7 +328,7 @@ export const academicProjects: GalleryProject[] = [
   {
     title: "DISCOVERYOU",
     description:
-      "DiscoverYou is a platform where users can discover and develop their talents.",
+      "DiscoverYou is a platform where users can discover, develop, and showcase their talents through contests, courses, communities, and expert guidance. It connects users with job opportunities and a marketplace to monetize creative work.",
     technologies: ["React", "Node.js", "MySQL"],
     githubLink: "https://github.com/NahinIntesher/DiscoverYou",
     date: "06/2024 - 08/2024",
@@ -390,6 +358,14 @@ export const academicProjects: GalleryProject[] = [
 
 export const personalProjects: GalleryProject[] = [
   {
+    title: "CV Banao Mobile App",
+    description: "A dedicated CV builder for academic, research, PhD and higher-study, and industry applications.",
+    technologies: ["React Native", "TypeScript"],
+    githubLink: "https://github.com/NahinIntesher/CV-Banao-App",
+    date: "2026",
+    image: "",
+  },
+  {
     title: "WEARQO",
     description: "WearQo is a fashion e-commerce company, sells brand stuff.",
     technologies: ["Next.js"],
@@ -401,7 +377,7 @@ export const personalProjects: GalleryProject[] = [
   {
     title: "Diganta",
     description:
-      "Diganta is my Coaching Center. I made a website for my coaching.",
+      "Diganta is my Coaching Center. I made a website for my coaching to facilitate communication between students and teachers.",
     technologies: ["Next.js"],
     githubLink: "https://github.com/NahinIntesher/diganta",
     date: "05/2025 - Present",
@@ -639,6 +615,7 @@ export const routes: Route[] = [
 export const now = [
   { label: "Thesis", value: "Bridging the Gap — in preparation" },
   { label: "Papers", value: "Manuscripts written, not yet published" },
-  { label: "SIDAS", value: "Currently in development" },
   { label: "Status", value: "Final trimester, B.Sc. CSE at UIU" },
 ];
+
+export const reference = { name: "Dr. Novia Nurain", role: "Assistant Professor", department: "Department of Computer Science & Engineering", institution: "Bangladesh University of Engineering and Technology (BUET)", contact: "Contact details available on request." };

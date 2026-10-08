@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import {
   Mail,
+  Phone,
+  Globe,
   Linkedin,
   Github,
   GraduationCap,
@@ -38,6 +40,8 @@ export default function ContactPage() {
               </p>
 
               <div className="c-rows">
+                <div className="c-row"><span className="c-icon"><Phone size={19}/></span><span className="c-label">Phone</span><a className="c-value" href={profile.phoneHref}>{profile.phone}</a></div>
+                <div className="c-row"><span className="c-icon"><Globe size={19}/></span><span className="c-label">Website</span><a className="c-value" href={profile.website} target="_blank" rel="noopener noreferrer">Website <ArrowUpRight size={15}/></a></div>
                 <div className="c-row">
                   <span className="c-icon">
                     <Mail strokeWidth={1.75} />

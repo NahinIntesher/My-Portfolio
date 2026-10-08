@@ -18,7 +18,6 @@ export default function PublicationsPage() {
           no="03"
           title="Publications & Research Output"
           tag="Output & Status"
-          lede="I am at the beginning of my research career. The works below are ongoing — the thesis is in its final write-up and the SIDAS manuscript is in preparation."
         />
         <Reveal>
           <div className="pub-list mt-12">

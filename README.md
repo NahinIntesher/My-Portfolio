@@ -1,52 +1,53 @@
-# Nahin Ahmed — Academic Portfolio (Next.js)
+# Nahin Intesher — Academic Portfolio
 
-A 9-section academic portfolio site: About, Research, Publications, Education, Teaching,
-Projects, Skills, Achievements, Contact — with dark/light mode that persists permanently
-across refreshes, tab closes, and syncs across open tabs.
+A Next.js portfolio with light/dark themes, academic content, individual research pages, and individual project pages.
 
-## Run it
+## Run locally
+
+Node.js 20 or later is recommended.
 
 ```bash
 npm install
-npm run dev        # → http://localhost:3000
+npm run dev
 ```
 
-> This build was verified in a sandboxed environment without access to Google Fonts,
-> so the font-fetch step was skipped there. On your machine (with normal internet
-> access) `npm run build` / `npm run dev` will fetch the three Google Fonts
-> (Newsreader, Instrument Sans, IBM Plex Mono) automatically — no changes needed.
+Open http://localhost:3000. For a production build:
 
-## Before you publish
+```bash
+npm run build
+npm start
+```
 
-1. **Content** — edit `lib/data.ts`. Every field is documented and every placeholder
-   is marked `// TODO`. This one file drives the whole site.
-2. **Portrait** — replace `public/portrait.jpg` with your real photo (4:5 aspect ratio
-   works best). A placeholder image is included so the build doesn't break.
-3. **CV** — replace `public/Nahin-Ahmed-CV.pdf` with your real CV. A placeholder PDF
-   is included for the same reason.
-4. **Links** — update `github`, `linkedin`, `scholar`, `orcid`, and `email` in
-   `lib/data.ts` under `profile`.
+## Content and assets
 
-## Customize the look
+- `lib/data.ts`: biography, education, teaching, research, project descriptions, skills, awards, links and reference.
+- `lib/details.ts`: concise card text, detail-page slugs, research tools/methods and project cover mappings.
+- `app/research/[slug]/page.tsx`: full research descriptions, areas, methods and technologies/frameworks.
+- `app/projects/[slug]/page.tsx`: full project description, technologies, period and repository/demo links.
+- `public/covers/`: 13 individually AI-generated project cover images, optimized as local WebP assets. These are illustrative cover artwork, not screenshots captured from the running project applications.
+- `public/cv.pdf`: CV download.
+- `public/cvimage.jpg`: portrait.
 
-- Colors, spacing tokens, and the dark palette live at the top of `app/globals.css`
-  (`:root` and `.dark` blocks) — everything else references these CSS variables, so
-  changing a handful of values re-themes the whole site.
-- Layout/spacing utilities come from Tailwind directly in the JSX; the editorial
-  typography and components (headers, cards, timeline, etc.) are hand-written classes
-  in `globals.css`.
+Research and project detail routes are generated statically. Adding a record also requires adding its identity/slug and cover mapping in `lib/details.ts`.
 
-## How theme persistence works
+## Typography and styling
 
-1. Clicking the toggle sets a `.dark` class on `<html>` and writes
-   `localStorage.setItem('theme', …)` — this choice is permanent.
-2. An inline script in `<head>` (in `app/layout.tsx`) restores the saved theme
-   **before first paint**, so there's no flash of the wrong theme on load.
-3. Until the user makes an explicit choice, the site follows the OS
-   `prefers-color-scheme`. Toggling in one browser tab also updates any other open
-   tabs on the same site.
+Newsreader is used for all headings, IBM Plex Mono for restrained utility labels, and Nimbus Sans for detailed paragraphs and interface text. All fonts are bundled locally with their licenses. The font families are self-hosted and do not require a font-service connection.
 
-## Deploy
+`app/studio.css` provides the original studio design. `app/refinements.css` provides the larger typography, static original-color square portrait, featured research card, detail pages, reference highlight and grouped awards.
 
-Push to GitHub and import the repo in [Vercel](https://vercel.com/new) — zero config
-needed.
+The original project set is retained. SIDAS is removed. Research interests are Human-Computer Interaction, Computer Vision and Quantum Machine Learning.
+
+The contact form retains the original setup. Its existing service configuration is in `components/ContactForm.tsx`; change it to your own endpoint if needed.
+
+## Previews
+
+The `previews/` directory contains verified desktop, mobile, dark theme and key page screenshots of this revision.
+
+## Latest revision
+
+The homepage contains the introduction, Connecting Perspectives and Complete Picture sections. The selected research, featured projects and teaching overview sections were removed from the homepage; their dedicated pages and content remain. Bridging the Gap spans both columns of the research grid, followed by paired cards on desktop and a single-column mobile layout. Page-heading subtitles are omitted.
+
+## Cover artwork
+
+All 13 covers were generated individually with the built-in image generation tool, then optimized as WebP for the website. The prompt direction was a professional landscape interface concept for the named project, an ivory and restrained green palette, accurate project purpose, minimal secondary text, and no invented metrics, credentials or marketing claims. DeepShield uses video and face analysis; NutriSight food recognition; DiscoverYou talent and creative content; Jiggasha quizzes; Mini Game Master two-player games; CV Banao a CV builder; WearQo a clothing storefront; Diganta coaching; Nahin Portfolio academic pages; Start To Do tasks; Abohawa weather; Simple Calculator arithmetic; Unit Converter unit conversions. These are concept illustrations, not captured screenshots. Source assets are in `public/covers/`.

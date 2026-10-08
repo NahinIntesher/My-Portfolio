@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import "./studio.css";
+import "./refinements.css";
 
-const newsreader = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
-const instrumentSans = Instrument_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
-const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
+const editorial = localFont({ src: [
+  { path: "../public/fonts/Newsreader-400-normal.ttf", weight: "400", style: "normal" },
+  { path: "../public/fonts/Newsreader-500-normal.ttf", weight: "500", style: "normal" },
+  { path: "../public/fonts/Newsreader-600-normal.ttf", weight: "600", style: "normal" },
+  { path: "../public/fonts/Newsreader-400-italic.ttf", weight: "400", style: "italic" }
+], variable: "--font-serif", display: "swap" });
+const mono = localFont({ src: [{ path: "../public/fonts/IBMPlexMono-400-normal.ttf", weight: "400" }], variable: "--font-mono", display: "swap" });
+const sans = localFont({ src: [{ path: "../public/fonts/NimbusSans-Regular.otf", weight: "400", style: "normal" }, { path: "../public/fonts/NimbusSans-Bold.otf", weight: "700", style: "normal" }], variable: "--font-sans", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "Nahin Intesher", template: "%s · Nahin Intesher" },
@@ -16,8 +23,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F9F7F1" },
-    { media: "(prefers-color-scheme: dark)", color: "#151410" },
+    { media: "(prefers-color-scheme: light)", color: "#F3F1E9" },
+    { media: "(prefers-color-scheme: dark)", color: "#171D18" },
   ],
 };
 
@@ -27,7 +34,7 @@ const themeInit = `(function(){try{document.documentElement.classList.add('js');
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${newsreader.variable} ${instrumentSans.variable} ${plexMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${editorial.variable} ${mono.variable} ${sans.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>

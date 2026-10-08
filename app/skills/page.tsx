@@ -1,26 +1,8 @@
-import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
-import Reveal from "@/components/Reveal";
+import { Code2, BrainCircuit, Globe, Database, Wrench } from "lucide-react";
 import { skills } from "@/lib/data";
-
-export const metadata: Metadata = { title: "Skills", description: "Technical skills of Nahin Ahmed." };
-
+export const metadata = { title: "Technical Skills" };
+const icons = [Code2,BrainCircuit,Globe,Database,Wrench];
 export default function SkillsPage() {
-  return (
-    <section className="section">
-      <div className="container">
-        <PageHead no="07" title="Technical Skills" tag="Toolbox" lede="A working toolbox — depth over breadth, chosen in service of the research and teaching above." />
-        <Reveal>
-          <dl className="mt-12">
-            {skills.map((s) => (
-              <div className="skills-row" key={s.category}>
-                <dt>{s.category}</dt>
-                <dd>{s.items.join(" · ")}</dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
-      </div>
-    </section>
-  );
+ return <section className="section"><div className="container"><PageHead no="07" title="Technical Skills" tag="Skills"/><dl className="skill-panels">{skills.map((s,i) => {const Icon=icons[i];return <div className="skill-panel" key={s.category}><dt><Icon size={24} strokeWidth={1.5}/>{s.category}</dt><dd>{s.items.map(t => <span key={t}>{t}</span>)}</dd></div>;})}</dl></div></section>;
 }
