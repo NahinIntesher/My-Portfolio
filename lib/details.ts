@@ -167,6 +167,6 @@ export const projectDetails = entries.map((p) => {
     slug,
     name: identity?.[1] || p.title,
     subtitle: identity?.[2] || p.description,
-    cover: `/covers/${slug}.png`,
+    cover: `/covers/${slug}.jpg`,
   };
 });
