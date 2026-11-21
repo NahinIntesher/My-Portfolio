@@ -1,5 +1,5 @@
 /* ===================================================================
-   lib/data.ts — the single source of content for the whole site.
+   lib/data.ts, the single source of content for the whole site.
    Sources: official CV (LaTeX) + personal project list. Update here only.
    =================================================================== */
 
@@ -17,19 +17,23 @@ export const profile = {
 };
 
 export const heroBio =
-  "Final-trimester Computer Science & Engineering student looking to build intelligent, human-centric systems for practical applications — through teaching, research, collaboration, and further studies.";
+  "Graduate CSE Student seeking a Lecturer position in Computer Science and Engineering. Undergraduate Teaching Assistant supporting many students across several core courses, with active research in Human-Computer Interaction and integrated with Computer Vision.";
 
 export const about = {
   paragraphs: [
-    "I am a final-trimester Computer Science & Engineering student at United International University, Dhaka, with a CGPA of 3.93/4.00. My coursework — from Digital Image Processing to Machine Learning — pulled me toward the intersection of Computer Vision, Human-Computer Interaction, and Assistive Technology.",
-    "A recurring question runs through my work: how can intelligent systems genuinely help people? My undergraduate thesis, Bridging the Gap, studies how vulnerable communities — older adults and younger users — perceive AI-generated synthetic media, and turns those insights into an AI-awareness tool built from participants' own data.",
-    "Teaching runs parallel to my research. I have served as an Undergraduate Teaching Assistant at UIU since 2023, and I run Diganta Coaching Center, where I teach school students — daily proof that explaining an idea clearly is as demanding, and as rewarding, as building one.",
+    "I am a Graduate Computer Science & Engineering student from United International University, Dhaka. My coursework, from Digital Image Processing to Machine Learning, pulled me toward the intersection of Computer Vision, Human-Computer Interaction, and Assistive Technology.",
+    "A recurring question runs through my work: how can intelligent systems genuinely help people? My undergraduate thesis, Bridging the Gap, studies how vulnerable communities, older adults and younger users, perceive AI-generated synthetic media, and turns those insights into an AI-awareness tool built from participants' own data.",
+    "Teaching runs parallel to my research. I have served as an Undergraduate Teaching Assistant at UIU since 2023, and I run Diganta Coaching Center, where I teach school students, daily proof that explaining an idea clearly is as demanding, and as rewarding, as building one.",
   ],
-  goal: "Looking for opportunities to build intelligent, human-centric systems for practical applications — through teaching, research, collaboration, and further studies.",
+  goal: "Looking for opportunities to build intelligent, human-centric systems for practical applications, through teaching, research, collaboration, and further studies.",
 };
 
 /* CV er Research Interests section er sathe exact match */
-export const researchInterests = ["Human-Computer Interaction", "Computer Vision", "Quantum Machine Learning"];
+export const researchInterests = [
+  "Human-Computer Interaction",
+  "Computer Vision",
+  "Quantum Machine Learning",
+];
 
 /* ---------------- Research ---------------- */
 export type ResearchItem = {
@@ -45,7 +49,7 @@ export const research: ResearchItem[] = [
     index: "R·01",
     title:
       "Bridging the Gap: Towards Building AI Awareness Among Vulnerable Populations",
-    desc: "Explored deepfake susceptibility and synthetic media perception among vulnerable age groups — older adults (55+) and adolescents (11-18). A participatory design study with interviews and surveys captured perceptual insights; a vision model was then trained and a mobile application built from participant data to serve as an interactive AI-awareness tool for marginal communities. The work analyses systemic challenges at the intersection of Computer Vision, Human-Computer Interaction, and Social Computing.",
+    desc: "Explored deepfake susceptibility and synthetic media perception among vulnerable age groups, older adults (55+) and adolescents (11-18). A participatory design study with interviews and surveys captured perceptual insights; a vision model was then trained and a mobile application built from participant data to serve as an interactive AI-awareness tool for marginal communities. The work analyses systemic challenges at the intersection of Computer Vision, Human-Computer Interaction, and Social Computing.",
     areas: [
       "Deepfake",
       "Computer Vision",
@@ -71,7 +75,7 @@ export const research: ResearchItem[] = [
     index: "R·03",
     title:
       "Reproducing and Evaluating Security Mechanisms for the Model Context Protocol (MCP)",
-    desc: "Re-implemented and evaluated four security frameworks — SAMOS, AgentBound, MCPShield, and Breaking the Protocol — on a dataset of 299 MCP servers and 27,861 metadata entries. Controlled experiments covered least-privilege capability boundaries, gateway information-flow control, metadata misalignment detection (78.38% detection rate), and protocol-level vulnerabilities. Reproduced metrics were benchmarked against the original papers, highlighting limitations in LLM agent tool integration and defense-in-depth strategies.",
+    desc: "Re-implemented and evaluated four security frameworks, SAMOS, AgentBound, MCPShield, and Breaking the Protocol, on a dataset of 299 MCP servers and 27,861 metadata entries. Controlled experiments covered least-privilege capability boundaries, gateway information-flow control, metadata misalignment detection (78.38% detection rate), and protocol-level vulnerabilities. Reproduced metrics were benchmarked against the original papers, highlighting limitations in LLM agent tool integration and defense-in-depth strategies.",
     areas: ["LLM Agents", "MCP Security", "Reproducibility"],
     status: "Author · 2026 · Manuscript written, unpublished",
   },
@@ -98,7 +102,7 @@ export const research: ResearchItem[] = [
 ];
 
 /* ---------------- Publications ----------------
-   Nothing below is published yet — manuscripts are written but unsubmitted/unpublished.
+   Nothing below is published yet, manuscripts are written but unsubmitted/unpublished.
    When a paper is accepted, update status/type/year and add venue + doi to the bibtex. */
 export type Publication = {
   id: string;
@@ -128,7 +132,7 @@ export const publications: Publication[] = [
     bibtex: bib(
       "intesher2026gap",
       "Bridging the Gap: Towards Building AI Awareness Among Vulnerable Populations",
-      "Undergraduate thesis, United International University — in preparation",
+      "Undergraduate thesis, United International University, in preparation",
     ),
   },
   {
@@ -138,7 +142,7 @@ export const publications: Publication[] = [
       "NutriSight: An AI-Powered Multi-Food Recognition and Personalized Nutrition Insight System",
     type: "Research Paper",
     year: "2026",
-    status: "Manuscript written — not yet published",
+    status: "Manuscript written, not yet published",
     abstract:
       "NutriSight combines YOLO26n-Seg detection and segmentation, a ViT-LSTM model for confidence-aware recognition refinement, and a ViT-Small model for meal-level nutrition estimation. It achieves an F1-score of 0.9007 on multi-food recognition refinement and a test MAE of 18.05 for meal-level calorie and macronutrient regression, and is deployed in a mobile application with customizable dietary profiles for allergies and health conditions.",
     bibtex: bib(
@@ -154,7 +158,7 @@ export const publications: Publication[] = [
       "Reproducing and Evaluating Security Mechanisms for the Model Context Protocol (MCP)",
     type: "Research Paper",
     year: "2026",
-    status: "Manuscript written — not yet published",
+    status: "Manuscript written, not yet published",
     abstract:
       "This study re-implements four MCP security frameworks (SAMOS, AgentBound, MCPShield, and Breaking the Protocol) and evaluates them on 299 MCP servers and 27,861 metadata entries. Experiments examine least-privilege boundaries, gateway information-flow control, metadata misalignment detection (78.38% detection rate), and protocol-level vulnerabilities, and compare reproduced results with the originally reported values.",
     bibtex: bib(
@@ -170,7 +174,7 @@ export const publications: Publication[] = [
       "Robustness-Efficiency Trade-offs of INT8 Quantization on Resource-Constrained Edge Devices",
     type: "Research Paper",
     year: "2026",
-    status: "Manuscript written — not yet published",
+    status: "Manuscript written, not yet published",
     abstract:
       "This paper evaluates FP32, INT8 post-training quantization (PTQ), and INT8 quantization-aware training (QAT) with TinyCNN and MobileNetV2 on CIFAR-10 and CIFAR-10-C. It introduces INT8-RPTQ, a degradation-aware PTQ calibration strategy that improves corruption robustness without full QAT retraining, and analyses latency, peak memory, throughput, power, and energy per inference on edge devices.",
     bibtex: bib(
@@ -196,8 +200,8 @@ export const education: EducationItem[] = [
     degree: "B.Sc. in Computer Science & Engineering",
     school: "United International University",
     place: "Dhaka, Bangladesh",
-    years: "2022 - Present (Final Trimester)",
-    result: "CGPA 3.93 / 4.00 (till 11th trimester)",
+    years: "2022 - 2026",
+    result: "CGPA 3.93 / 4.00",
     notes: [
       {
         label: "Relevant coursework",
@@ -205,7 +209,7 @@ export const education: EducationItem[] = [
       },
       {
         label: "Undergraduate thesis",
-        text: "Bridging the Gap: Towards Building AI Awareness among Vulnerable Populations — see Research & Publications",
+        text: "Bridging the Gap: Towards Building AI Awareness among Vulnerable Populations, see Research & Publications",
       },
     ],
   },
@@ -225,7 +229,14 @@ export const education: EducationItem[] = [
     result: "GPA 5.00 / 5.00",
     notes: [],
   },
-  { degree: "Junior School Certificate (Science)", school: "Shamshul Haque Khan School and College", place: "Dhaka, Bangladesh", years: "2015", result: "GPA 5.00 / 5.00", notes: [] },
+  {
+    degree: "Junior School Certificate (Science)",
+    school: "Shamshul Haque Khan School and College",
+    place: "Dhaka, Bangladesh",
+    years: "2015",
+    result: "GPA 5.00 / 5.00",
+    notes: [],
+  },
   // Earlier education records retained.
   // firete chaile niche er pattern-e ekta entry copy korun:
   // { degree: "Junior School Certificate (Science)", school: "Shamshul Haque Khan School & College", place: "Dhaka, Bangladesh", years: "2015", result: "GPA 5.00 / 5.00", notes: [] },
@@ -243,7 +254,7 @@ export type TeachingEntry = {
 
 export const teaching: TeachingEntry[] = [
   {
-    period: "2023 - 2026",
+    period: "2024 - 2026",
     role: "Undergraduate Teaching Assistant",
     org: "United International University",
     place: "Dhaka, Bangladesh",
@@ -256,10 +267,10 @@ export const teaching: TeachingEntry[] = [
   },
   {
     period: "2024 - Present",
-    role: "Owner & Academic Instructor",
+    role: "Academic Instructor",
     org: "Diganta Coaching Center",
     place: "Dhaka, Bangladesh",
-    desc: "Founded and run a coaching center for school students — an ongoing, hands-on exercise in explaining material clearly to learners of very different levels.",
+    desc: "Founded and run a coaching center for school students, an ongoing, hands-on exercise in explaining material clearly to learners of very different levels.",
     points: [
       "Help students of classes 6-10 understand their topics easily and build genuine confidence in them.",
       "Encourage students toward sectors where they can contribute and grow.",
@@ -278,7 +289,7 @@ export const teachingInterests = [
 
 /* ---------------- Projects ---------------- */
 
-/* Curated research-grade builds — editorial rows on /projects */
+/* Curated research-grade builds, editorial rows on /projects */
 export type Project = {
   title: string;
   desc: string;
@@ -290,7 +301,7 @@ export type Project = {
 
 export const selectedProjects: Project[] = [
   {
-    title: "Deepfake Detection System (DeepShield) — Thesis Project",
+    title: "Deepfake Detection System (DeepShield), Thesis Project",
     desc: "Video deepfake detection combining a Swin Transformer and DCT backbone with a Temporal Transformer. Datasets include Celeb-DF-v2, FaceForensics++ (C23), and the Arabic Deepfake dataset.",
     tech: [
       "Python",
@@ -304,7 +315,7 @@ export const selectedProjects: Project[] = [
     github: "https://github.com/NahinIntesher/deepshield",
   },
   {
-    title: "NutriSight — Multi-Food Recognition & Nutrition Insight System",
+    title: "NutriSight, Multi-Food Recognition & Nutrition Insight System",
     desc: "A multi-stage vision pipeline: YOLO26n-Seg for detection and segmentation, a ViT-LSTM model for confidence-aware recognition refinement, and a ViT-Small model for meal-level nutrition estimation. Delivered as a full-stack mobile platform (Expo React Native frontend, FastAPI backend) with customizable dietary profiles for allergy and condition management.",
     tech: ["Python", "PyTorch", "OpenCV", "FastAPI", "React Native"],
     year: "06/2026 - 08/2026",
@@ -313,7 +324,7 @@ export const selectedProjects: Project[] = [
   },
 ];
 
-/* Academic record — coursework & team projects (image grid) */
+/* Academic record, coursework & team projects (image grid) */
 export type GalleryProject = {
   title: string;
   description: string;
@@ -338,7 +349,7 @@ export const academicProjects: GalleryProject[] = [
   {
     title: "Jiggasha",
     description:
-      "An online gamified educational platform — students compete in live, battle-royale-style exams and see how they rank against others.",
+      "An online gamified educational platform, students compete in live, battle-royale-style exams and see how they rank against others.",
     technologies: ["Next.js", "Node.js", "PostgreSQL"],
     githubLink: "https://github.com/NahinIntesher/Jiggasha",
     date: "04/2025 - 06/2025",
@@ -358,31 +369,32 @@ export const academicProjects: GalleryProject[] = [
 
 export const personalProjects: GalleryProject[] = [
   {
+    title: "Diganta",
+    description:
+      "Diganta is a hosted learning and coaching management platform with a Next.js web application, a Node.js / Express backend, a MySQL database, and a Flutter mobile app. It supports role-based administration, courses, lessons, student records, fees, results, communities, messaging, and live classes.",
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Flutter",
+      "Socket.IO",
+      "LiveKit",
+    ],
+    githubLink: "https://github.com/NahinIntesher/diganta",
+    date: "05/2025 - Present",
+    demoLink: "https://diganta.kodofact.com",
+    image:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
     title: "CV Banao Mobile App",
-    description: "A dedicated CV builder for academic, research, PhD and higher-study, and industry applications.",
+    description:
+      "A dedicated CV builder for academic, research, PhD and higher-study, and industry applications.",
     technologies: ["React Native", "TypeScript"],
     githubLink: "https://github.com/NahinIntesher/CV-Banao-App",
     date: "2026",
     image: "",
-  },
-  {
-    title: "WEARQO",
-    description: "WearQo is a fashion e-commerce company, sells brand stuff.",
-    technologies: ["Next.js"],
-    githubLink: "https://github.com/orgs/Wearqo/repositories",
-    date: "07/2024 - Present",
-    image:
-      "https://images.unsplash.com/photo-1561069934-eee225952461?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Diganta",
-    description:
-      "Diganta is my Coaching Center. I made a website for my coaching to facilitate communication between students and teachers.",
-    technologies: ["Next.js"],
-    githubLink: "https://github.com/NahinIntesher/diganta",
-    date: "05/2025 - Present",
-    image:
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
   },
   {
     title: "Nahin Portfolio",
@@ -447,7 +459,14 @@ export const skills = [
   },
   {
     category: "Web Development",
-    items: ["Next.js", "React", "Node.js", "Express.js", "React Native"],
+    items: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express.js",
+      "React Native",
+      "Flutter",
+    ],
   },
   { category: "Database", items: ["PostgreSQL", "MySQL"] },
   { category: "Tools", items: ["Git", "GitHub", "Linux", "Adobe Illustrator"] },
@@ -465,7 +484,7 @@ export type Achievement = {
 export const achievements: Achievement[] = [
   {
     year: "2025",
-    title: "Champion — UIU CSE Project Show (Summer)",
+    title: "Champion, UIU CSE Project Show (Summer)",
     tag: "Champion",
     detail: "System Analysis & Design track.",
     link: {
@@ -475,7 +494,7 @@ export const achievements: Achievement[] = [
   },
   {
     year: "2024",
-    title: "Champion — UIU CSE Project Show (Summer)",
+    title: "Champion, UIU CSE Project Show (Summer)",
     tag: "Champion",
     detail: "Database Management Systems track.",
     link: {
@@ -485,13 +504,13 @@ export const achievements: Achievement[] = [
   },
   {
     year: "2024",
-    title: "2nd Runner-up — UIU CSE Project Show (Fall)",
+    title: "2nd Runner-up, UIU CSE Project Show (Fall)",
     tag: "Contest",
-    detail: "Software Engineering track — DiscoverYou App.",
+    detail: "Software Engineering track, DiscoverYou App.",
   },
   {
     year: "2024",
-    title: "3rd Runner-up — UIU CSE Project Show (Fall)",
+    title: "3rd Runner-up, UIU CSE Project Show (Fall)",
     tag: "Contest",
     detail: "Advanced Object Oriented Programming track.",
     link: {
@@ -501,13 +520,13 @@ export const achievements: Achievement[] = [
   },
   {
     year: "2024",
-    title: "1st Runner-up — UIU Juniors Programming Contest",
+    title: "1st Runner-up, UIU Juniors Programming Contest",
     tag: "Contest",
     detail: "Intra-university programming contest, Department of CSE.",
   },
   {
     year: "2022 -",
-    title: "Academic Scholarship — United International University",
+    title: "Academic Scholarship, United International University",
     tag: "Scholarship",
     detail:
       "100% tuition scholarship in 9 trimesters, and 50% in a further 3 trimesters.",
@@ -613,9 +632,15 @@ export const routes: Route[] = [
 ];
 
 export const now = [
-  { label: "Thesis", value: "Bridging the Gap — in preparation" },
+  { label: "Thesis", value: "Bridging the Gap, in preparation" },
   { label: "Papers", value: "Manuscripts written, not yet published" },
   { label: "Status", value: "Final trimester, B.Sc. CSE at UIU" },
 ];
 
-export const reference = { name: "Dr. Novia Nurain", role: "Assistant Professor", department: "Department of Computer Science & Engineering", institution: "Bangladesh University of Engineering and Technology (BUET)", contact: "Contact details available on request." };
+export const reference = {
+  name: "Dr. Novia Nurain",
+  role: "Assistant Professor",
+  department: "Department of Computer Science & Engineering",
+  institution: "Bangladesh University of Engineering and Technology (BUET)",
+  contact: "Contact details available on request.",
+};

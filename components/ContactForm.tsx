@@ -1,22 +1,24 @@
 "use client";
+import { useContent } from "@/components/ContentProvider";
 
 import { useState, type FormEvent } from "react";
 import { Send, LoaderCircle, Check } from "lucide-react";
-import { profile } from "@/lib/data";
 
-/* TODO: apnar Formspree form — submissions apnar dashboard + email e jabe */
+
+/* TODO: apnar Formspree form, submissions apnar dashboard + email e jabe */
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/myzpdezj";
 
 type FormState = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
+  const { profile } = useContent();
   const [state, setState] = useState<FormState>("idle");
   const [feedback, setFeedback] = useState<string | null>(null);
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    /* currentTarget async gap-er pore null hoye jay — tai age capture */
+    /* currentTarget async gap-er pore null hoye jay, tai age capture */
     const form = e.currentTarget;
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
@@ -62,7 +64,7 @@ export default function ContactForm() {
           email,
           subject: subject || undefined,
           message,
-          _subject: `Portfolio contact — ${subject || name}`, // inbox-e ei subject-e ashbe
+          _subject: `Portfolio contact, ${subject || name}`, // inbox-e ei subject-e ashbe
           _replyto: email, // "Reply" chaplei user-er kachhe jabe
         }),
       });
@@ -83,7 +85,7 @@ export default function ContactForm() {
     } catch {
       setState("error");
       setFeedback(
-        `Something went wrong — please try again, or email me directly at ${profile.email}.`,
+        `Something went wrong, please try again, or email me directly at ${profile.email}.`,
       );
     }
   }
@@ -92,7 +94,7 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={onSubmit} noValidate>
       <p className="form-title">Direct Message</p>
 
-      {/* Spam trap — screen reader ba user kono bhabe dekhbe na */}
+      {/* Spam trap, screen reader ba user kono bhabe dekhbe na */}
       <input
         type="text"
         name="_gotcha"
@@ -166,7 +168,7 @@ export default function ContactForm() {
           )}
         </button>
         <p className="form-hint">
-          Delivered straight to my inbox — no email client needed.
+          Delivered straight to my inbox, no email client needed.
         </p>
       </div>
 

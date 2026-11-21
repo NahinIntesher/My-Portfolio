@@ -1,8 +1,8 @@
+import { getContent } from "@/lib/content-store";
 import Link from "next/link";
 import {
   ArrowUpRight,
   ArrowDown,
-  FileText,
   Github,
   Linkedin,
   Mail,
@@ -10,26 +10,23 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import ResearchLens from "@/components/ResearchLens";
-import { heroBio, routes, profile } from "@/lib/data";
-export default function HomePage() {
+
+export default async function HomePage() {
+  const { heroBio, profile, researchInterests } = await getContent();
   return (
     <>
       <section className="studio-hero container" aria-label="Introduction">
         <div className="hero-composition">
           <div className="hero-manifesto">
             <h1 className="studio-name">
-              Nahin <em>Intesher</em>
+              {profile.name}
               <span className="name-period">.</span>
             </h1>
             <span className="hero-role">
-              COMPUTER SCIENCE &amp; ENGINEERING STUDENT
+              {profile.role}
             </span>
 
-            <h2 className="hero-interest">
-              <em>Interested in</em>{" "}
-              <strong>Human-Computer Interaction, Computer Vision</strong>{" "}
-              <em>and</em> <strong>Quantum Machine Learning</strong>.
-            </h2>
+            <h2 className="hero-interest">{researchInterests.join(", ")}</h2>
             <p>{heroBio}</p>
             <div className="hero-actions">
               <Link href="/research" className="btn btn-solid">
@@ -41,7 +38,7 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View CV <FileText size={15} />
+                View CV
               </a>
             </div>
             <div className="hero-socials">
@@ -69,18 +66,16 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <figure className="studio-portrait">
+          {profile.image && <figure className="studio-portrait">
             <img
-              src="/cvimage.jpg"
-              alt="Nahin Intesher"
+              src={profile.image}
+              alt={profile.name}
               width={400}
               height={600}
               fetchPriority="high"
             />
-            <div className="portrait-corner" aria-hidden="true">
-              N / I
-            </div>
-          </figure>
+
+          </figure>}
         </div>
       </section>
       <section className="lens-section" id="work">
@@ -100,34 +95,7 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
-      <section className="section container index-section">
-        <Reveal>
-          <div className="section-intro">
-            <div>
-              <p className="eyebrow">THE COMPLETE PICTURE</p>
-              <h2>
-                Explore <em>the portfolio.</em>
-              </h2>
-            </div>
-          </div>
-          <nav className="toc" aria-label="All portfolio sections">
-            {routes.map((r) => (
-              <Link className="toc-row" key={r.href} href={r.href}>
-                <span className="toc-no">{r.no}</span>
-                <div>
-                  <span className="toc-title">{r.label}</span>
-                  <span className="toc-desc">
-                    {r.href === "/education"
-                      ? "United International University and academic record."
-                      : r.desc}
-                  </span>
-                </div>
-                <ArrowUpRight size={18} />
-              </Link>
-            ))}
-          </nav>
-        </Reveal>
-      </section>
+
     </>
   );
 }

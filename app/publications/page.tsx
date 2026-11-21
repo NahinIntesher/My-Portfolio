@@ -1,16 +1,18 @@
+import { getContent } from "@/lib/content-store";
 import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import Reveal from "@/components/Reveal";
 import PublicationCard from "@/components/PublicationCard";
-import { publications } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Publications",
   description:
-    "Publications and research output of Nahin Intesher — ongoing thesis and manuscript.",
+    "Publications and research output of Nahin Intesher, ongoing thesis and manuscript.",
 };
 
-export default function PublicationsPage() {
+export default async function PublicationsPage() {
+  const { publications } = await getContent();
   return (
     <section className="section">
       <div className="container">

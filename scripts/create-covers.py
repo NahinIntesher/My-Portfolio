@@ -72,7 +72,7 @@ for slug,name,color in projects:
    s+=rect(109,243+j*62,26,26,'#f2e6dc',6)+text(155,263+j*62,t,18)+line(155,279+j*62,545)
  elif slug=='abohawa':
   s+=text(81,154,'Weather, wherever you are',31,color,600)+rect(81,190,830,47,'#fff',8,'#d6e2e6')+text(102,220,'Search a city',16,'#7d8b91')
-  s+=rect(81,262,830,250,'#dfeef2',12)+text(108,310,'Weather overview',22,color,600)+text(112,412,'—°',80,color)
+  s+=rect(81,262,830,250,'#dfeef2',12)+text(108,310,'Weather overview',22,color,600)+text(112,412,'...°',80,color)
   s+='<circle cx="752" cy="349" r="45" fill="#ead9a6"/><ellipse cx="720" cy="403" rx="60" ry="25" fill="#fff"/><ellipse cx="775" cy="401" rx="57" ry="28" fill="#fff"/>'
   s+=text(108,466,'Select a city for the forecast',17,color)
  elif slug=='simple-calculator':

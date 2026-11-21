@@ -1,14 +1,16 @@
+import { getContent } from "@/lib/content-store";
 import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import Reveal from "@/components/Reveal";
-import { education } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Education",
   description: "Academic record of Nahin Intesher.",
 };
 
-export default function EducationPage() {
+export default async function EducationPage() {
+  const { education } = await getContent();
   return (
     <section className="section">
       <div className="container">

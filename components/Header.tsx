@@ -1,15 +1,23 @@
 "use client";
+import { useContent } from "@/components/ContentProvider";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, ArrowUpRight, Plus } from "lucide-react";
+import { X, ArrowUpRight, Menu } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
-import { profile, routes } from "@/lib/data";
+
 export default function Header() {
+  const { profile, routes } = useContent();
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   useEffect(() => setOpen(false), [path]);
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1200px)');
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener('change', closeOnDesktop);
+    return () => desktop.removeEventListener('change', closeOnDesktop);
+  }, []);
   useEffect(() => {
     const el = dialog.current;
     if (!el) return;
@@ -30,19 +38,10 @@ export default function Header() {
       <header className="site-header">
         <div className="container header-inner">
           <Link className="brand" href="/" aria-label="Nahin Intesher home">
-            <span className="brand-mark">
-              N<span>i</span>
-            </span>
-            <span>Nahin Intesher</span>
+            <span>Nahin</span>
           </Link>
           <nav className="main-nav" aria-label="Primary">
-            {routes
-              .filter((r) =>
-                ["/about", "/research", "/projects", "/contact"].includes(
-                  r.href,
-                ),
-              )
-              .map((r) => (
+            {routes.map((r) => (
                 <Link
                   href={r.href}
                   key={r.href}
@@ -59,11 +58,12 @@ export default function Header() {
           <div className="header-tools">
             <a
               className="nav-cv"
+              aria-label="View CV"
               href={profile.cv}
               target="_blank"
               rel="noopener noreferrer"
             >
-              CV <ArrowUpRight size={14} />
+              <span>CV</span>
             </a>
             <ThemeToggle />
             <button
@@ -73,8 +73,7 @@ export default function Header() {
               aria-controls="all-navigation"
               aria-label="Open all sections"
             >
-              <span>INDEX</span>
-              <Plus size={18} />
+              <Menu size={21} strokeWidth={1.8} />
             </button>
           </div>
         </div>
@@ -114,7 +113,7 @@ export default function Header() {
         <div className="navigation-sheet">
           <div className="navigation-top">
             <span className="eyebrow" id="navigation-title">
-              THE PORTFOLIO INDEX
+              Navigation
             </span>
             <button
               className="menu-close"
@@ -136,7 +135,6 @@ export default function Header() {
                 }
                 onClick={() => setOpen(false)}
               >
-                <span className="menu-number">{r.no}</span>
                 <span>{r.short}</span>
                 <ArrowUpRight size={22} />
               </Link>

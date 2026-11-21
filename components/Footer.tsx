@@ -1,7 +1,9 @@
+import { getContent } from "@/lib/content-store";
 import Link from "next/link";
 import { ArrowUpRight, ArrowUp, Mail } from "lucide-react";
-import { profile, routes } from "@/lib/data";
-export default function Footer() {
+
+export default async function Footer() {
+  const { profile, routes } = await getContent();
   return (
     <footer className="site-footer">
       <div className="container">
@@ -28,7 +30,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <Link href="/" className="f-name">
-              Nahin Intesher<span className="dot">.</span>
+              {profile.name}<span className="dot">.</span>
             </Link>
             <p className="f-role">
               Computer Science & Engineering
@@ -37,6 +39,7 @@ export default function Footer() {
             </p>
           </div>
           <nav aria-label="Footer navigation">
+            <Link href="/admin">Admin</Link>
             {routes.map((r) => (
               <Link key={r.href} href={r.href}>
                 {r.short}

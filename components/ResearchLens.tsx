@@ -1,11 +1,13 @@
 "use client";
+import { useContent } from "@/components/ContentProvider";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
-import { researchSlug } from "@/lib/details";
-import { research, researchInterests } from "@/lib/data";
+
+
 const codes = ["HCI", "CV", "QML"];
 export default function ResearchLens() {
+  const { researchDetails: research, researchInterests } = useContent();
   const [active, setActive] = useState(0);
   const works = research.filter((r) =>
     r.areas.includes(researchInterests[active]),
@@ -17,45 +19,6 @@ export default function ResearchLens() {
         <span className="lens-instruction">Choose a perspective</span>
       </div>
       <div className="lens-body">
-        <div className="lens-orbit" aria-hidden="true">
-          <svg viewBox="0 0 360 300" className="orbital-svg">
-            <g className="orbit-lines">
-              <ellipse
-                cx="180"
-                cy="150"
-                rx="147"
-                ry="67"
-                transform="rotate(-32 180 150)"
-              />
-              <ellipse
-                cx="180"
-                cy="150"
-                rx="147"
-                ry="67"
-                transform="rotate(32 180 150)"
-              />
-              <ellipse
-                cx="180"
-                cy="150"
-                rx="147"
-                ry="67"
-                transform="rotate(90 180 150)"
-              />
-            </g>
-            <circle cx="180" cy="150" r="92" className="orbit-faint" />
-            <g className="orbit-satellite">
-              <circle cx="180" cy="58" r="5" />
-            </g>
-            <circle cx="180" cy="150" r="40" className="orbit-core" />
-            <text x="180" y="155" textAnchor="middle">
-              {codes[active]}
-            </text>
-            <path
-              d="M17 150h30m266 0h30M180 2v20m0 255v21"
-              className="orbit-ticks"
-            />
-          </svg>
-        </div>
         <div className="lens-work">
           <p className="eyebrow">
             {String(active + 1).padStart(2, "0")} / RESEARCH INTEREST
@@ -66,7 +29,7 @@ export default function ResearchLens() {
               <>
                 <span className="lens-related">Related work</span>
                 {works.slice(0, 2).map((r) => (
-                  <Link href={`/research/${researchSlug(r)}`} key={r.index}>
+                  <Link href={`/research/${r.slug}`} key={r.index}>
                     {r.title}
                     <ArrowUpRight size={15} />
                   </Link>

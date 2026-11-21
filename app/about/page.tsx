@@ -1,12 +1,14 @@
+import { getContent } from "@/lib/content-store";
 import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import Reveal from "@/components/Reveal";
 import SideBox from "@/components/SideBox";
-import { about, researchInterests } from "@/lib/data";
+
 
 export const metadata: Metadata = { title: "About", description: "Academic biography, motivation, and long-term direction of Nahin Intesher." };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { about, researchInterests } = await getContent();
   return (
     <section className="section">
       <div className="container">

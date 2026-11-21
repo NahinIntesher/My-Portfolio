@@ -1,0 +1,4 @@
+export default function Pipeline({image,caption,gallery=[]}:{image:string;caption:string;gallery?:{image:string;caption:string}[]}){
+  if (!image && !gallery.length) return null;
+  return <section className="pipeline-section" aria-label="Working pipeline"><h2>Working pipeline</h2>{image&&<figure className="pipeline-figure"><a href={image} target="_blank" rel="noopener noreferrer" aria-label="Open full-size working pipeline"><img src={image} alt={caption||'Working pipeline'} width={1200} height={540}/></a>{caption&&<figcaption>{caption}</figcaption>}</figure>}{gallery.length>0&&<div className="pipeline-gallery">{gallery.map((item,i)=><figure key={item.image+i}><a href={item.image} target="_blank" rel="noopener noreferrer"><img src={item.image} alt={item.caption||`Project image ${i+1}`} width={1000} height={600} loading="lazy"/></a>{item.caption&&<figcaption>{item.caption}</figcaption>}</figure>)}</div>}</section>;
+}

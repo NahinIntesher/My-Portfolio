@@ -1,9 +1,11 @@
 "use client";
+import { useContent } from "@/components/ContentProvider";
 import Link from "next/link";
 import { useState } from "react";
 import { Search, ArrowUpRight, X } from "lucide-react";
-import { projectDetails } from "@/lib/details";
+
 export default function ProjectExplorer() {
+  const { projectDetails } = useContent();
   const [filter, setFilter] = useState("All");
   const [query, setQuery] = useState("");
   const visible = projectDetails.filter(
@@ -17,7 +19,7 @@ export default function ProjectExplorer() {
     <>
       <div className="project-toolbar">
         <div className="filter-tabs" role="group" aria-label="Filter projects">
-          {["All", "Research", "Academic", "Personal"].map((c) => (
+          {["All", ...Array.from(new Set(projectDetails.map(p => p.category)))].map((c) => (
             <button
               key={c}
               aria-pressed={filter === c}

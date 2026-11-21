@@ -1,3 +1,4 @@
+import { getContent } from "@/lib/content-store";
 import type { Metadata } from "next";
 import {
   Mail,
@@ -13,15 +14,16 @@ import PageHead from "@/components/PageHead";
 import Reveal from "@/components/Reveal";
 import CopyButton from "@/components/CopyButton";
 import ContactForm from "@/components/ContactForm";
-import { profile } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch — teaching, research, higher studies, and collaboration.",
+    "Get in touch, teaching, research, higher studies, and collaboration.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { profile } = await getContent();
   return (
     <section className="section">
       <div className="container">

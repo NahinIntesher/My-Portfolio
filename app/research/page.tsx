@@ -1,11 +1,13 @@
+import { getContent } from "@/lib/content-store";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import PageHead from "@/components/PageHead";
-import { researchDetails } from "@/lib/details";
+
 
 export const metadata = { title: "Research" };
 
-export default function ResearchPage() {
+export default async function ResearchPage() {
+  const { researchDetails } = await getContent();
   return (
     <section className="section">
       <div className="container">

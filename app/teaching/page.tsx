@@ -1,12 +1,14 @@
+import { getContent } from "@/lib/content-store";
 import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import Reveal from "@/components/Reveal";
 import SideBox from "@/components/SideBox";
-import { teaching, teachingInterests, reference } from "@/lib/data";
+
 
 export const metadata: Metadata = { title: "Teaching", description: "Teaching and academic experience of Nahin Intesher." };
 
-export default function TeachingPage() {
+export default async function TeachingPage() {
+  const { teaching, teachingInterests, reference } = await getContent();
   return (
     <section className="section">
       <div className="container">

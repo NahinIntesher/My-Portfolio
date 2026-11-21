@@ -1,0 +1,27 @@
+/* Approved observatory backdrop, with quiet teal surfaces for readable content. */
+body{background-color:var(--paper);background-image:radial-gradient(ellipse at 88% 8%,#ccebe570,transparent 56%);background-repeat:no-repeat;background-size:100% 1000px}
+.dark body{background-color:var(--paper);background-image:linear-gradient(90deg,#050e142e,#050e140d),url('/backgrounds/observatory.png');background-position:center top;background-size:100% auto;background-repeat:no-repeat}
+.header-inner{gap:20px}.main-nav{gap:17px;flex-wrap:nowrap}.main-nav a{font-size:14px;white-space:nowrap}.main-nav a[aria-current]:after{background:var(--accent)}.header-tools{gap:12px}.menu-btn{display:none}.theme-switch[aria-checked=true] .theme-switch-thumb{background:#a5ebd6}.theme-switch[aria-checked=true] svg:last-of-type{color:#062c2b}.theme-switch[aria-checked=false] svg:first-of-type{color:#0b756f}
+.studio-hero{background:transparent}.dark .studio-portrait{border-color:#67b5a22e;box-shadow:0 0 0 1px #93dfce24,0 18px 64px #0005}.dark .hero-manifesto{position:relative;z-index:1}.dark .hero-interest,.dark .studio-name{color:var(--ink);text-shadow:0 2px 22px #050e14}.dark .hero-manifesto>p{color:#cee3df}.dark .hero-role,.dark .hero-socials>span{color:var(--muted)}
+.lens-section{background:var(--soft)}.research-lens{background:#102e30;color:#d8eeea}.research-lens .lens-top .eyebrow,.research-lens .lens-instruction,.research-lens .lens-work .eyebrow,.research-lens .lens-related{color:#abcac4}.research-lens .lens-work h3,.research-lens .lens-work>div a{color:#edf9f5}.research-lens .lens-work .text-link{color:#a5ebd6}.research-lens .lens-empty{color:#bfd8d2}.lens-tabs button[aria-pressed=true],.dark .lens-tabs button[aria-pressed=true]{background:#a5ebd6;color:#052922}.lens-tabs button[aria-pressed=true] span,.dark .lens-tabs button[aria-pressed=true] span{color:#052922}.lens-tabs button:not([aria-pressed=true]){color:#c3dfd8}.orbit-lines{stroke:#75b7a9}.orbit-core{fill:#a5ebd6}.orbital-svg text{fill:#052922}.orbit-faint,.orbit-ticks{stroke:#53877d}
+.dark .lens-section{background:#081820eb}.dark .research-lens{border:1px solid var(--line);background:#0c1b22}.dark .lens-body,.dark .lens-work,.dark .lens-tabs button{background:transparent}.dark .lens-orbit{background:#102e32}.dark .lens-tabs button:not([aria-pressed=true]){color:#c3dfd8}
+.site-footer{background:#09282b}.site-footer .eyebrow,.site-footer .f-role,.site-footer .f-ext,.site-footer .fineprint{color:#b3d3cb}.site-footer .f-name,.site-footer .footer-email,.site-footer .footer-invite h2,.site-footer nav{color:#e6f6f0}.site-footer .footer-contact{background:#a5ebd6;color:#052922}.dark .site-footer{background:#07151c}.footer-grid{border-color:#528b814d}
+.dark .research-card,.dark .project-card-link,.dark .pub-card,.dark .skill-panel,.dark .award-entry{background:#0c1b22f5}.dark .research-card-featured{background:#102e32ed}.dark .detail-heading,.dark .detail-next{border-color:var(--line)}
+.navigation-dialog::backdrop{background:#020b12b8}.nav-grid a{border-color:var(--line)}.navigation-top .eyebrow{font-size:14px;letter-spacing:.04em;color:var(--ink)}
+body:has(.admin-workspace){background-image:none}
+.about-prose{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,3vw,38px);box-shadow:0 8px 30px #05292206}
+.dark .about-prose{background:#0c1b22;box-shadow:0 12px 36px #0000001a}
+.about-prose p{color:var(--text);text-align:left;hyphens:none}
+.about-prose .about-quote{color:var(--ink);text-align:left;border-color:var(--line)}
+.nav-cv span{display:inline!important}.nav-cv{font-weight:700;min-width:42px;justify-content:center}
+.live-background{position:fixed;inset:0;width:100%;height:100dvh;z-index:0;pointer-events:none;contain:strict}
+body>main,.site-footer{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.live-background{display:none}}
+@media(min-width:1200px){.main-nav{display:flex}.menu-btn{display:none}.brand{font-size:27px}}
+@media(min-width:1200px) and (max-width:1399px){.main-nav{gap:14px}.header-inner{gap:16px}.header-tools{gap:10px}.main-nav a{font-size:14px}.nav-cv{padding-inline:10px}}
+@media(max-width:1199px){.main-nav{display:none}.menu-btn{display:inline-flex}.header-tools{margin-left:auto}.header-inner{min-height:70px}}
+@media(max-width:800px){.dark body{background-size:auto 850px;background-position:62% top;background-image:linear-gradient(#050e1461,#050e147a),url('/backgrounds/observatory.png')}.dark .hero-manifesto{background:linear-gradient(90deg,#050e142e,transparent);border-radius:12px}.navigation-dialog{width:min(650px,calc(100% - 32px))}}
+@media(max-width:520px){.header-inner{min-height:66px}.dark body{background-size:auto 740px;background-position:60% top}.nav-grid a{font-size:25px}.navigation-sheet{padding:22px}}
+/* The actual globe and dust bands are now rendered and rotated in 3D by LiveBackground. */
+.dark body{background-image:radial-gradient(ellipse at 77% 19%,#10333355,transparent 53%);background-size:100% 1100px;background-position:center top}
+@media(prefers-reduced-motion:reduce){.dark body{background-image:linear-gradient(90deg,#050e142e,#050e140d),url('/backgrounds/observatory.png');background-size:cover;background-position:center top}}

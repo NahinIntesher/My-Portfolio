@@ -1,0 +1,39 @@
+/* Compact responsive Baloo Da 2 copy; navigation keeps its approved sizing. */
+:root {
+  --copy-size:clamp(1rem,.97rem + .08vw,1.0625rem);
+  --prose-size:clamp(1.03125rem,1rem + .1vw,1.09375rem);
+  --control-size:clamp(.9375rem,.92rem + .05vw,.96875rem);
+  --label-size:clamp(.875rem,.85rem + .06vw,.90625rem);
+}
+body { font-size:var(--copy-size);line-height:1.7; }
+.hero-manifesto>p,.detail-prose p,.about-prose p { font-size:var(--prose-size);line-height:1.7; }
+.research-card p,.research-card-featured p,.project-card-link p,
+.detail-list,.detail-facts,.side-box li,.teach-entry .desc,.teach-entry .dash-list li,
+.t-inst,.inst,.t-note,.pub-abs p,.reference-card p,.award-entry p,
+.programming-award p,.scholarship-highlight p { font-size:var(--copy-size);line-height:1.7; }
+.main-nav a { font-size:.9375rem;line-height:1.5; }
+.btn,.hero-manifesto .btn,.card-detail-link,.back-link,
+.filter-tabs button,.project-search input,.field input,.field textarea,
+.field label,.chip-btn,.c-row,.lens-work>div a,.lens-work .text-link,.lens-empty { font-size:var(--control-size); }
+.nav-cv { font-size:.9375rem; }
+.lens-tab-name { font-size:clamp(.875rem,.82rem + .17vw,1rem);line-height:1.5; }
+.lens-instruction,.lens-related,.hero-socials>span { font-size:.875rem; }
+.tech-tags li,.pub-meta { font-size:var(--label-size); }
+.footer-grid nav,.f-role,.f-ext,.fineprint,.footer-email { font-size:var(--copy-size); }
+.admin-workspace { font-size:1rem; }
+.admin-sidebar button,.admin-primary,.admin-secondary,.admin-field>label,
+.admin-login-form label,.admin-advanced>label,.admin-page-heading p { font-size:.9375rem; }
+.admin-entry>summary { font-size:1rem; }
+.admin-field input,.admin-field textarea,.admin-field select,.admin-login-form input { font-size:1rem; }
+.admin-help,.admin-empty,.admin-login-card>p { font-size:1rem; }
+@media(max-width:1199px) { .nav-grid a { font-size:1.125rem;line-height:1.5; } }
+@media(max-width:520px) {
+  .hero-actions { gap:10px; }
+  .hero-actions .btn { padding-inline:16px; }
+  .filter-tabs { gap:7px; }
+  .navigation-email { font-size:.875rem; }
+}
+@media(max-width:360px) {
+  .hero-actions { display:grid;grid-template-columns:minmax(0,1fr); }
+  .hero-actions .btn { width:100%;justify-content:center; }
+}
