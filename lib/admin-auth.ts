@@ -5,7 +5,7 @@ import { createHash, timingSafeEqual } from 'node:crypto';
 import type { NextRequest } from 'next/server';
 import { database } from './content-store';
 export const cookieName = 'portfolio_admin';
-export const configured = () => !!process.env.ADMIN_USERNAME && (process.env.ADMIN_PASSWORD?.length || 0) >= 20 && (process.env.ADMIN_SESSION_SECRET?.length || 0) >= 32 && (!process.env.VERCEL || !!process.env.APP_ORIGIN);
+export const configured = () => !!process.env.ADMIN_USERNAME && (process.env.ADMIN_PASSWORD?.length || 0) >= 8 && (process.env.ADMIN_SESSION_SECRET?.length || 0) >= 32 && (!process.env.VERCEL || !!process.env.APP_ORIGIN);
 const secret = () => new TextEncoder().encode(process.env.ADMIN_SESSION_SECRET);
 const fingerprint = () => createHash('sha256').update(`${process.env.ADMIN_USERNAME}:${process.env.ADMIN_PASSWORD}`).digest('hex');
 export function passwordMatches(username: string, password: string) {

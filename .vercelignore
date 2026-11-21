@@ -1,0 +1,11 @@
+.env*
+.portfolio/
+previews/
+tests/
+scripts/
+.agents/
+.codex/
+*.tsbuildinfo
+public/covers/*.png
+public/covers/*.webp
+public/covers/*.svg

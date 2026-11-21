@@ -14,8 +14,19 @@ test('project identities remain attached to their own repositories after list ed
     const project=defaultContent.projectDetails.find(p=>p.githubLink.toLowerCase().endsWith('/'+repository));
     assert.ok(project,repository);
     assert.equal(project.slug,slug);
-    assert.equal(project.cover,`/covers/${slug}.webp`);
+    assert.match(project.cover,new RegExp(`^/covers/${slug}\\.(?:jpg|jpeg|png|webp)$`));
     assert.equal(project.pipelineImage,`/pipelines/${slug}.svg`);
+  }
+});
+
+test('every project cover resolves to an existing bundled image',async()=>{
+  for(const project of defaultContent.projectDetails){
+    const bytes=await fs.readFile(path.join('public',project.cover));
+    assert.ok(bytes.length>0,project.cover);
+    const jpeg=bytes[0]===0xff&&bytes[1]===0xd8;
+    const png=bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]));
+    const webp=bytes.toString('ascii',0,4)==='RIFF'&&bytes.toString('ascii',8,12)==='WEBP';
+    assert.ok(jpeg||png||webp,`${project.cover} must contain a supported image`);
   }
 });
 test('bundled content satisfies the editable schema, including optional award links',()=>assert.equal(contentSchema.safeParse(defaultContent).success,true));

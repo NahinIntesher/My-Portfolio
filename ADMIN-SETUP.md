@@ -2,6 +2,17 @@
 
 Open `/admin`. The owner can edit profile/contact details, the homepage bio, research interests, biography, research, projects, publications, education, teaching, skills, awards, navigation and academic references. Project/research entries include pipeline images and additional image galleries. Add, remove and reorder list entries. Save publishes the current draft. Export/import provides a portable content backup. Structural website code remains in this repository.
 
+## Connected portfolio environment
+
+- Vercel project: `assassin318554s-projects/nahin`.
+- Live admin: `https://www.nahin.com.bd/admin`. The apex domain redirects to `www`, which is also the configured production request origin.
+- Database: `nahin-portfolio-db`, Neon Free, Singapore, provisioned through Vercel Marketplace. Both admin tables are initialized.
+- Media: `nahin-portfolio-media`, public Vercel Blob, Mumbai, connected to this project.
+- Production credentials are configured in Vercel. The owner's local copy is in Git-ignored `.env.local`; no credentials belong in `.env.example`.
+- Current portfolio content is saved in the database. Edit published information through the admin; database content now takes priority over bundled defaults in `lib/data.ts`.
+- Verified: live login, persisted content across promotion, upload/list/delete, 21 public pages and all 12 manually installed covers. Temporary test uploads and verification access were removed.
+- `npm run setup:admin-storage` safely verifies/creates the two tables when setting up another environment. It preserves existing content.
+
 ## Local use
 
 Use `npm run dev` while editing source files: saved changes to `lib/data.ts`
@@ -13,7 +24,7 @@ snapshot, `data.ts` supplies the content. Project URL/cover identities are match
 by repository rather than list position, so removing a project is safe.
 
 1. Copy `.env.example` to `.env.local`.
-2. Set `ADMIN_USERNAME`, your own `ADMIN_PASSWORD` (at least 20 characters), and a random `ADMIN_SESSION_SECRET` of at least 32 characters. Do not paste credentials into chat or commit them.
+2. Set `ADMIN_USERNAME`, your own `ADMIN_PASSWORD` (at least 8 characters), and a random `ADMIN_SESSION_SECRET` of at least 32 characters. Do not commit credentials.
 3. Generate a session secret in your terminal: `node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"`.
 4. Set `APP_ORIGIN=http://localhost:3000` and restart `npm run dev`.
 5. Open `http://localhost:3000/admin` and sign in. With no database configured, local content saves atomically to `.portfolio/content.json`; uploads go to `public/uploads/`. These paths are ignored by Git. Back them up if using local storage.
@@ -23,7 +34,7 @@ Local storage is intended for one local Node process. It is disabled on Vercel, 
 ## Vercel production
 
 1. In the portfolio Vercel project, add a **separate Neon PostgreSQL database** through Storage/Marketplace. Copy its pooled connection string to `DATABASE_URL` for this portfolio. Do not reuse Diganta or nahin-video resources.
-2. Open that database's SQL editor and run `scripts/admin-schema.sql`. This creates only `portfolio_content` and `portfolio_login_limits`; it does not alter any other application's tables.
+2. With the portfolio's `DATABASE_URL` in `.env.local`, run `npm run setup:admin-storage`, or run `scripts/admin-schema.sql` in the database SQL editor. This creates only `portfolio_content` and `portfolio_login_limits`; it does not alter any other application's tables. The command preserves existing content and verifies both tables.
 3. Create a **public Vercel Blob store** for this portfolio and attach it to the project. Its token must be available as `BLOB_READ_WRITE_TOKEN`. Files uploaded to this library are public, so upload only documents and images meant for the public portfolio.
 4. Set `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET`, and `APP_ORIGIN` (the exact `https://your-domain` origin, without a trailing slash) in Vercel environment settings. Keep all variables server-only: no `NEXT_PUBLIC_` prefix. Use a separate configuration for previews if enabling admin there.
 5. Deploy/redeploy the project using Node.js 22 or newer. Open `/admin`, sign in and save one harmless edit. Verify it survives a new request and redeploy. Upload a test image and verify its public URL, then remove the reference, save, and delete the unused file.
