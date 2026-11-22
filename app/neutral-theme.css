@@ -97,6 +97,30 @@ h1,h2,h3,h4,body a,.text-link,.hero-interest,.hero-role,.name-period,
 .dark .lens-tabs button[aria-pressed=true],.dark .lens-tabs button[aria-pressed=true] span { background:#183e37;color:var(--ink); }
 .lens-top,.lens-tabs,.lens-work>div a { border-color:var(--line); }
 .about-prose { background:var(--surface); }
+/* Card blur preview; the preceding commit keeps the original opaque surfaces. */
+@supports ((backdrop-filter:blur(36px)) or (-webkit-backdrop-filter:blur(36px))) {
+  :root :is(.research-card,.project-card-link,.pub-card,.skill-panel,.award-entry,.reference-card,.about-prose,.research-lens,.cp-panel) {
+    background:color-mix(in srgb,var(--surface) 48%,transparent);
+    -webkit-backdrop-filter:blur(36px) saturate(115%);
+    backdrop-filter:blur(36px) saturate(115%);
+  }
+  :root :is(.research-card-featured,.side-box) {
+    background:color-mix(in srgb,var(--soft) 56%,transparent);
+    -webkit-backdrop-filter:blur(36px) saturate(115%);
+    backdrop-filter:blur(36px) saturate(115%);
+  }
+  :root .project-card-link {
+    background:transparent;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+  .project-card-link .project-body {
+    background:color-mix(in srgb,var(--surface) 38%,transparent);
+    -webkit-backdrop-filter:blur(36px) saturate(125%);
+    backdrop-filter:blur(36px) saturate(125%);
+    box-shadow:inset 0 1px 0 #ffffff1a;
+  }
+}
 .about-prose .about-quote { color:var(--ink); }
 .side-box { background:var(--soft);color:var(--ink); }
 .side-box h2,.side-box h3,.side-box li { color:var(--ink); }
