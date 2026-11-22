@@ -27,6 +27,7 @@
 }
 body { background-color:var(--paper); background-image:radial-gradient(ellipse at 88% 10%,#ccebe535,transparent 55%); color:var(--text); }
 .dark body { background-color:var(--paper); background-image:radial-gradient(ellipse at 75% 22%,#153b352e,transparent 55%); }
+.dark .live-background { opacity:.4; }
 html:not(.dark) .live-background {
   -webkit-mask-image:linear-gradient(90deg,transparent 47%,#000 55%);
   mask-image:linear-gradient(90deg,transparent 47%,#000 55%);
