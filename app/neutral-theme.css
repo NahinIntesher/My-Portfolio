@@ -129,6 +129,13 @@ h1,h2,h3,h4,body a,.text-link,.hero-interest,.hero-role,.name-period,
   .navigation-email { margin-top:auto;padding-top:24px;font-size:13px; }
 }
 @keyframes menu-enter { from { transform:translateX(100%); } to { transform:translateX(0); } }
+.research-page-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:30px;margin-bottom:32px}
+.research-page-top .page-heading{flex:1;min-width:0;margin:0;padding:0;border:0}
+.research-document-actions{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:4px}
+.research-document-heading{margin-top:24px}.research-document-heading h1{margin-top:0}
+.research-document-preview{display:block;width:100%;height:80vh;min-height:560px;margin-top:32px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+@media(max-width:900px){.research-page-top{align-items:flex-start;flex-direction:column;gap:22px}.research-document-actions{padding:0}}
+@media(max-width:420px){.research-document-actions{width:100%;display:grid;grid-template-columns:1fr}.research-document-actions .btn{justify-content:center}.research-document-preview{min-height:440px}}
 @media(prefers-reduced-motion:reduce) {
   .navigation-dialog[open] { animation:none; }
   .dark body { background-image:linear-gradient(90deg,#090a0b50,#090a0b30),url('/backgrounds/observatory.png'); }

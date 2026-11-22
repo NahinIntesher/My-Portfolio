@@ -11,7 +11,6 @@ const flows={
  jiggasha:['Jiggasha learning workflow',['Next.js interface','Node.js backend','Live exam sessions','PostgreSQL records','Results & rankings']],
  'mini-game-master':['Mini Game Master application',['Two players','JavaFX interface','Java game logic','MySQL persistence','Game results']],
  'cv-banao':['CV Banao document workflow',['Profile information','React Native editor','CV sections','Academic / industry layout','Document preview']],
- wearqo:['WearQo storefront workflow',['Product browsing','Next.js storefront','Product selection','Cart interaction','Store experience']],
  diganta:['Diganta hosted platform',['Next.js web + Flutter app','Node.js / Express API','Role-based services','MySQL database','Realtime & live classes']],
  'nahin-portfolio':['Portfolio publishing workflow',['Owner edits & uploads','Authenticated admin','Content & media storage','Next.js rendering','Responsive portfolio']],
  'start-to-do':['Start To Do workflow',['Create task','Flutter interface','Task state','Complete / update','Daily task list']],

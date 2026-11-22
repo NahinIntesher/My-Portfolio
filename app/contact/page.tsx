@@ -35,11 +35,6 @@ export default async function ContactPage() {
                 I am open to opportunities in teaching, research, higher
                 studies, and academic collaboration.
               </p>
-              <p className="contact-note">
-                If you are a faculty member, a prospective supervisor, or a
-                potential collaborator, I would be genuinely happy to hear from
-                you. I usually respond within 48 hours.
-              </p>
 
               <div className="c-rows">
                 <div className="c-row"><span className="c-icon"><Phone size={19}/></span><span className="c-label">Phone</span><a className="c-value" href={profile.phoneHref}>{profile.phone}</a></div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { LockKeyhole, ArrowLeft, CheckCircle2, Circle } from "lucide-react";
+import { LockKeyhole, ArrowLeft, CheckCircle2, Circle, BookOpen, FolderKanban, Image as ImageIcon, ArrowUpRight } from "lucide-react";
 import { configured, isAdmin } from "@/lib/admin-auth";
 import { storageReady } from "@/lib/content-store";
 import LoginForm from "@/components/admin/LoginForm";
@@ -22,19 +22,13 @@ export default async function AdminLogin() {
   ] as const;
   return (
     <section className="admin-workspace admin-login">
-      <div className="admin-login-top">
-        <Link href="/">
-          <ArrowLeft size={16} /> Portfolio
-        </Link>
-        <ThemeToggle />
-      </div>
-      <div className="admin-login-card">
-        <span className="admin-emblem">
-          <LockKeyhole size={26} />
-        </span>
-        <h1>Portfolio admin</h1>
-        <p>Sign in to manage your content and files.</p>
-        <LoginForm ready={ready} />
+      <aside className="studio-login-aside">
+        <Link href="/" className="studio-login-brand"><span><BookOpen size={21}/></span>Nahin<small>PORTFOLIO</small></Link>
+        <div className="studio-login-intro"><span className="studio-login-eyebrow">ADMIN WORKSPACE</span><h2>Portfolio<br/>administration.</h2><div className="studio-login-demo" aria-hidden="true"><div className="studio-demo-top"><span/><span/><span/><strong>Portfolio</strong></div><div className="studio-demo-body"><div className="studio-demo-sidebar"><i/><i/><i/><i/></div><div className="studio-demo-content"><div className="studio-demo-heading"/><div className="studio-demo-stats"><span/><span/><span/></div><div className="studio-demo-row"><FolderKanban size={18}/><span>Projects</span><CheckCircle2 size={15}/></div><div className="studio-demo-row"><BookOpen size={18}/><span>Research</span><CheckCircle2 size={15}/></div><div className="studio-demo-row"><ImageIcon size={18}/><span>Media library</span><CheckCircle2 size={15}/></div></div></div></div></div>
+        <div className="studio-login-aside-footer"><span>Content · Research · Media</span><a href="/">View portfolio <ArrowUpRight size={14}/></a></div>
+      </aside>
+      <div className="studio-login-main"><div className="admin-login-top"><Link href="/"><ArrowLeft size={15}/> Back to portfolio</Link><ThemeToggle/></div>
+      <div className="admin-login-card"><span className="admin-emblem"><LockKeyhole size={23}/></span><h1>Sign in</h1><p>Access your portfolio workspace.</p><LoginForm ready={ready}/>
         {!ready && (
           <aside className="admin-setup">
             <h2>Finish setup</h2>
@@ -53,7 +47,7 @@ export default async function AdminLogin() {
             </ul>
           </aside>
         )}
-      </div>
+      </div><footer className="studio-login-footer">Nahin · Portfolio administration</footer></div>
     </section>
   );
 }

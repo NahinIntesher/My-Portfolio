@@ -56,6 +56,6 @@ Official provider instructions: [Neon driver](https://neon.com/docs/serverless/s
 
 ## Pipeline sources
 
-`scripts/create-pipelines.mjs` creates 18 standalone SVG workflow illustrations. Research diagrams follow the supplied portfolio descriptions. Diganta's architecture was checked against `F:/Diganta/README.md`, `backend/README.md`, `frontend/README.md`, and `mobile_app/README.md` without modifying that project or reading its secrets. Other diagrams are simplified overviews of the recorded technology/functionality, not measured execution traces or benchmark claims. Replace/expand them from the admin if implementation details change.
+`scripts/create-pipelines.mjs` creates 17 standalone SVG workflow illustrations. Research diagrams follow the supplied portfolio descriptions. Diganta's architecture was checked against `F:/Diganta/README.md`, `backend/README.md`, `frontend/README.md`, and `mobile_app/README.md` without modifying that project or reading its secrets. Other diagrams are simplified overviews of the recorded technology/functionality, not measured execution traces or benchmark claims. Replace/expand them from the admin if implementation details change.
 
 The approved observatory background is implemented in dark mode. Light mode uses a soft teal palette. Desktop sections are available directly in the navbar; tablet/mobile sections are inside the three-dot menu.

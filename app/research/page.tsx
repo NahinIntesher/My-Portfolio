@@ -1,6 +1,6 @@
 import { getContent } from "@/lib/content-store";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import PageHead from "@/components/PageHead";
 
 
@@ -11,7 +11,17 @@ export default async function ResearchPage() {
   return (
     <section className="section">
       <div className="container">
-        <PageHead no="02" title="Research" tag="Research" />
+        <div className="research-page-top">
+          <PageHead no="02" title="Research" tag="Research" />
+          <div className="research-document-actions">
+            <Link href="/research/document" className="btn btn-solid">
+              View research PDF <ArrowUpRight size={17} />
+            </Link>
+            <a href="/research.pdf?download=1" download="Nahin_Intesher_Research.pdf" className="btn btn-ghost">
+              <Download size={17} /> Download PDF
+            </a>
+          </div>
+        </div>
         <div className="research-cards">
           {researchDetails.map((research) => (
             <Link

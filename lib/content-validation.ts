@@ -30,6 +30,7 @@ export const contentSchema = shape(defaultContent).superRefine((input, ctx) => {
   for (const key of ['projectDetails', 'researchDetails'] as const) {
     const seen = new Set<string>();
     c[key].forEach((entry, i) => {
+      if (key === 'researchDetails' && entry.slug === 'document') ctx.addIssue({code:'custom',path:[key,i,'slug'],message:'The slug document is reserved for the research PDF. Choose another slug.'});
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.slug) || seen.has(entry.slug)) ctx.addIssue({code:'custom',path:[key,i,'slug'],message:'Use a unique lowercase URL slug.'});
       seen.add(entry.slug);
       entry.gallery.forEach((image, n) => { if (!image.image) ctx.addIssue({code:'custom',path:[key,i,'gallery',n,'image'],message:'Choose an image or remove this gallery entry.'}); });

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  devIndicators: false,
   reactStrictMode: true,
   poweredByHeader: false,
   async headers() {
@@ -18,6 +19,18 @@ const nextConfig = {
       headers: [
         { key: "Content-Type", value: "application/pdf" },
         { key: "Content-Disposition", value: 'inline; filename="Nahin_Intesher_CV.pdf"' },
+      ],
+    }, {
+      source: "/research.pdf",
+      headers: [
+        { key: "Content-Type", value: "application/pdf" },
+        { key: "Content-Disposition", value: 'inline; filename="Nahin_Intesher_Research.pdf"' },
+      ],
+    }, {
+      source: "/research.pdf",
+      has: [{ type: "query", key: "download", value: "1" }],
+      headers: [
+        { key: "Content-Disposition", value: 'attachment; filename="Nahin_Intesher_Research.pdf"' },
       ],
     }];
   },

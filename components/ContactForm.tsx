@@ -167,9 +167,6 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        <p className="form-hint">
-          Delivered straight to my inbox, no email client needed.
-        </p>
       </div>
 
       {feedback ? (
